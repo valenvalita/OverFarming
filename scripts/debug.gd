@@ -10,7 +10,8 @@ func _ready() -> void:
 	canvas_layer.add_child(container)
 
 
-func dprint(message: Variant, seconds: int = 2) -> void:
+# screen print
+func sprint(message: Variant, seconds: int = 2) -> void:
 	if multiplayer.multiplayer_peer is OfflineMultiplayerPeer:
 		print(message)
 	else:

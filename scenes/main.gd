@@ -9,9 +9,3 @@ func _ready() -> void:
 		var player = player_scene.instantiate()
 		players.add_child(player)
 		player.setup(player_data)
-	
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
