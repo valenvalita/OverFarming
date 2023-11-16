@@ -17,4 +17,4 @@ func _input(event: InputEvent) -> void:
 @rpc
 func test():
 #	if is_multiplayer_authority():
-	Debug.dprint("test - player: %s" % name, 30)
+	Debug.sprint("test - player: %s" % name, 30)
