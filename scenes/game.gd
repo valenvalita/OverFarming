@@ -43,17 +43,6 @@ func get_current_player() -> Statics.PlayerData:
 	return get_player(multiplayer.get_unique_id())
 
 
-@rpc("any_peer", "reliable", "call_local")
-func set_player_role(id: int, role: Statics.Role) -> void:
-	var player = get_player(id)
-	player.role = role
-	player_updated.emit(id)
-
-
-func set_current_player_role(role: Statics.Role) -> void:
-	set_player_role.rpc(multiplayer.get_unique_id(), role)
-
-
 func is_online() -> bool:
 	return not multiplayer.multiplayer_peer is OfflineMultiplayerPeer and \
 		multiplayer.multiplayer_peer.get_connection_status() != MultiplayerPeer.CONNECTION_DISCONNECTED

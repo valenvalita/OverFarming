@@ -11,7 +11,6 @@ func _ready():
 		var player = Statics.PlayerData.new(
 			0,
 			test_player.name,
-			test_player.role
 		)
 		Game.players.push_back(player)
 	
