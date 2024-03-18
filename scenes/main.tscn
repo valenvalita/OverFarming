@@ -1,15 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://b5hufqs7sbm01"]
+[gd_scene load_steps=2 format=3 uid="uid://b5hufqs7sbm01"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_ysfbh"]
-[ext_resource type="PackedScene" uid="uid://b3mhsy021dqog" path="res://scenes/player.tscn" id="2_e1311"]
-[ext_resource type="Texture2D" uid="uid://tw8t38ns0seh" path="res://icon.svg" id="3_fcvyk"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_ysfbh")
-player_scene = ExtResource("2_e1311")
-
-[node name="Players" type="Node2D" parent="."]
-
-[node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(631, 323)
-texture = ExtResource("3_fcvyk")
