@@ -1,36 +1,51 @@
 extends CharacterBody2D
 
-@onready var multiplayer_spawner: MultiplayerSpawner = $MultiplayerSpawner
-@onready var multiplayer_synchronizer: MultiplayerSynchronizer = $MultiplayerSynchronizer
+var speed = 400
+var gravity = 600
+var jump_speed = 500
+var acceleration = 1000
 
-@export var bullet_scene: PackedScene
-
-@export var score = 1 :
-	set(value):
-		score = value
-		Debug.log("Player %s score %d" % [name, score])
+var player
+@onready var label: Label = $Label
+@onready var input_synchronizer: InputSynchronizer = $InputSynchronizer
 
 
 func _input(event: InputEvent) -> void:
 	if is_multiplayer_authority():
 		if event.is_action_pressed("test"):
-			test.rpc(Game.get_current_player().name)
-			var bullet = bullet_scene.instantiate()
-			# spawner will spawn a bullet on every simulated
-			multiplayer_spawner.add_child(bullet, true)
-			# triggers syncronizer
-			score += 1
+			test.rpc()
 
-func setup(player_data: Statics.PlayerData):
+
+func _physics_process(delta: float) -> void:
+	#if is_multiplayer_authority():
+	if not is_on_floor():
+		velocity.y += gravity * delta
+		
+	var move_input = input_synchronizer.move_input
+	velocity.x = move_toward(velocity.x, speed * move_input, acceleration * delta)
+	
+	if is_on_floor() and input_synchronizer.jump:
+		velocity.y = -jump_speed
+	input_synchronizer.jump = false
+	
+	# send_position.rpc(position, velocity)
+	move_and_slide()
+
+
+func setup(player_data: Statics.PlayerData) -> void:
 	name = str(player_data.id)
 	set_multiplayer_authority(player_data.id)
-	multiplayer_spawner.set_multiplayer_authority(player_data.id)
-	multiplayer_synchronizer.set_multiplayer_authority(player_data.id)
+	#input_synchronizer.set_multiplayer_authority(player_data.id, false)
+	label.text = player_data.name
+	player = player_data
 
-@rpc("authority", "call_local", "reliable")
-func test(name):
-	var message = "test " + name
-	var sender_id = multiplayer.get_remote_sender_id()
-	var sender_player = Game.get_player(sender_id)
-	Debug.log(message)
-	Debug.log(sender_player.name)
+
+@rpc("authority", "call_local", "unreliable")
+func test():
+	Debug.log("test %s" % player.name)
+
+
+@rpc
+func send_position(pos: Vector2, vel: Vector2) -> void:
+	position = lerp(position, pos, 0.5)
+	velocity = lerp(velocity, vel, 0.5)
