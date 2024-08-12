@@ -1,15 +1,14 @@
 extends Node2D
 
-
-#var player_scene = preload("res://scenes/player.tscn")
 @export var player_scene: PackedScene
 @onready var players: Node2D = $Players
-
+@onready var markers: Node2D = $Markers
 
 func _ready() -> void:
-	for player_data in Game.players:
-		var player = player_scene.instantiate()
-		
-		players.add_child(player)
-		player.setup(player_data)
+	for i in Game.players.size():
+		var player_data = Game.players[i]
+		var player_inst = player_scene.instantiate()
+		players.add_child(player_inst)
+		player_inst.setup(player_data)
+		player_inst.global_position = markers.get_child(i).global_position
 		
