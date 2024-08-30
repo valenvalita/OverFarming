@@ -1,8 +1,6 @@
 extends CharacterBody2D
 
 var speed = 400
-var gravity = 600
-var jump_speed = 500
 var acceleration = 1000
 
 var player
@@ -17,25 +15,22 @@ func _input(event: InputEvent) -> void:
 
 
 func _physics_process(delta: float) -> void:
-	#if is_multiplayer_authority():
-	if not is_on_floor():
-		velocity.y += gravity * delta
-		
-	var move_input = input_synchronizer.move_input
-	velocity.x = move_toward(velocity.x, speed * move_input, acceleration * delta)
-	
-	if is_on_floor() and input_synchronizer.jump:
-		velocity.y = -jump_speed
-	input_synchronizer.jump = false
-	
-	# send_position.rpc(position, velocity)
+	var move_input = input_synchronizer.move_input_dir
+
+	var direction = (Vector2(move_input.x, move_input.y)).normalized()
+	if direction:
+		velocity.x = direction.x * speed
+		velocity.y = direction.y * speed
+	else:
+		velocity.x = move_toward(velocity.x, 0, speed)
+		velocity.y = move_toward(velocity.y, 0, speed)
+
 	move_and_slide()
 
 
 func setup(player_data: Statics.PlayerData) -> void:
 	name = str(player_data.id)
 	set_multiplayer_authority(player_data.id)
-	#input_synchronizer.set_multiplayer_authority(player_data.id, false)
 	label.text = player_data.name
 	player = player_data
 
