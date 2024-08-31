@@ -6,6 +6,7 @@ var acceleration = 1000
 var player
 @onready var label: Label = $Label
 @onready var input_synchronizer: InputSynchronizer = $InputSynchronizer
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 
 func _input(event: InputEvent) -> void:
@@ -14,19 +15,27 @@ func _input(event: InputEvent) -> void:
 			test.rpc()
 
 
+@warning_ignore("unused_parameter")
 func _physics_process(delta: float) -> void:
-	var move_input = input_synchronizer.move_input_dir
-
+	
+	var move_input = input_synchronizer.move_input
 	var direction = (Vector2(move_input.x, move_input.y)).normalized()
+
 	if direction:
+		if direction.x < 0:
+			animated_sprite_2d.flip_h = true
+		elif direction.x > 0:
+			animated_sprite_2d.flip_h = false 
+		animated_sprite_2d.play("walk")
 		velocity.x = direction.x * speed
 		velocity.y = direction.y * speed
+
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)
 		velocity.y = move_toward(velocity.y, 0, speed)
-
+		animated_sprite_2d.play("idle")
+	
 	move_and_slide()
-
 
 func setup(player_data: Statics.PlayerData) -> void:
 	name = str(player_data.id)
