@@ -2,7 +2,7 @@
 
 [ext_resource type="TileSet" uid="uid://vda4beo4w5cc" path="res://assets/world/background.tres" id="1_q36my"]
 
-[node name="Background" type="Node2D"]
+[node name="World" type="Node2D"]
 
 [node name="Pasto" type="TileMapLayer" parent="."]
 texture_filter = 1

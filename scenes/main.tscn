@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_ysfbh"]
 [ext_resource type="PackedScene" uid="uid://bkvdcld6sp21y" path="res://scenes/player.tscn" id="2_p1kmq"]
-[ext_resource type="PackedScene" uid="uid://bbrb6ortyibuu" path="res://scenes/background.tscn" id="3_p3f7a"]
+[ext_resource type="PackedScene" uid="uid://c2yul5p5mhlse" path="res://scenes/world.tscn" id="3_p3f7a"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_5tieo"]
 
@@ -11,9 +11,9 @@ script = ExtResource("1_ysfbh")
 player_scene = ExtResource("2_p1kmq")
 
 [node name="Background" type="Node2D" parent="."]
-
-[node name="Background" parent="Background" instance=ExtResource("3_p3f7a")]
 scale = Vector2(2, 2)
+
+[node name="World" parent="Background" instance=ExtResource("3_p3f7a")]
 
 [node name="Players" type="Node2D" parent="."]
 
