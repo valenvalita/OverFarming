@@ -161,6 +161,9 @@ shape = SubResource("CapsuleShape2D_s5pf6")
 texture_filter = 1
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_3sxfv")
-animation = &"walk"
-frame = 4
-frame_progress = 0.70158
+animation = &"idle"
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(10, 8.46154)
+
+[node name="SpritePosition" type="Marker2D" parent="."]
