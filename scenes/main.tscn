@@ -15,8 +15,7 @@ y_sort_enabled = true
 y_sort_enabled = true
 scale = Vector2(2, 2)
 
-[node name="World" parent="Players/Background" instance=ExtResource("3_p3f7a")]
-y_sort_enabled = true
+[node name="World2" parent="Players/Background" instance=ExtResource("3_p3f7a")]
 
 [node name="Markers" type="Node2D" parent="."]
 
