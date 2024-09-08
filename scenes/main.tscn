@@ -1,21 +1,21 @@
-[gd_scene load_steps=5 format=3 uid="uid://b5hufqs7sbm01"]
+[gd_scene load_steps=4 format=3 uid="uid://b5hufqs7sbm01"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_ysfbh"]
 [ext_resource type="PackedScene" uid="uid://bkvdcld6sp21y" path="res://scenes/player.tscn" id="2_p1kmq"]
 [ext_resource type="PackedScene" uid="uid://c2yul5p5mhlse" path="res://scenes/world.tscn" id="3_p3f7a"]
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_5tieo"]
-
 [node name="Main" type="Node2D"]
 script = ExtResource("1_ysfbh")
 player_scene = ExtResource("2_p1kmq")
 
-[node name="Background" type="Node2D" parent="."]
+[node name="Players" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Background" type="Node2D" parent="Players"]
+y_sort_enabled = true
 scale = Vector2(2, 2)
 
-[node name="World" parent="Background" instance=ExtResource("3_p3f7a")]
-
-[node name="Players" type="Node2D" parent="."]
+[node name="World2" parent="Players/Background" instance=ExtResource("3_p3f7a")]
 
 [node name="Markers" type="Node2D" parent="."]
 
@@ -26,9 +26,3 @@ gizmo_extents = 100.0
 [node name="Marker2D2" type="Marker2D" parent="Markers"]
 position = Vector2(900, 317)
 gizmo_extents = 100.0
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(552, 586)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-shape = SubResource("WorldBoundaryShape2D_5tieo")
