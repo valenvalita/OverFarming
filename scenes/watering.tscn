@@ -1,0 +1,58 @@
+[gd_scene load_steps=9 format=3 uid="uid://bw04bp3w70eh"]
+
+[ext_resource type="Script" path="res://scenes/watering.gd" id="1_6aenu"]
+[ext_resource type="Texture2D" uid="uid://crv3mdptaj4kj" path="res://assets/actions/watering/tools_watering_strip5.png" id="2_k11x6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bcf7a"]
+atlas = ExtResource("2_k11x6")
+region = Rect2(16, 26, 78, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e8vwh"]
+atlas = ExtResource("2_k11x6")
+region = Rect2(112, 26, 78, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cplxl"]
+atlas = ExtResource("2_k11x6")
+region = Rect2(208, 26, 78, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_42yhn"]
+atlas = ExtResource("2_k11x6")
+region = Rect2(304, 26, 78, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bqv1h"]
+atlas = ExtResource("2_k11x6")
+region = Rect2(400, 26, 78, 22)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v0idq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bcf7a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e8vwh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cplxl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_42yhn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bqv1h")
+}],
+"loop": true,
+"name": &"watering",
+"speed": 12.0
+}]
+
+[node name="Watering" type="Node2D"]
+script = ExtResource("1_6aenu")
+
+[node name="ToolsWateringStrip5" type="AnimatedSprite2D" parent="."]
+position = Vector2(16, 7)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_v0idq")
+animation = &"watering"
+frame = 3
+frame_progress = 0.899101
