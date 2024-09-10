@@ -168,3 +168,5 @@ animation = &"idle"
 position = Vector2(10, 8.46154)
 
 [node name="SpritePosition" type="Marker2D" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="."]

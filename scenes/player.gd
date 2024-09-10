@@ -8,20 +8,41 @@ var player
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var marker: Marker2D = $Marker2D
 @onready var sprite_position: Marker2D = $SpritePosition
+@onready var camera2d: Camera2D = $Camera2D
 
 var water = preload("res://scenes/watering.tscn")
 var dig = preload("res://scenes/digging.tscn")
+var carry = preload("res://scenes/carry.tscn")
+var doing = preload("res://scenes/doing.tscn")
+var is_carry = false
+var carry_instance : Node2D
+
+func _ready() -> void:
+	# Solo activa la cámara si este jugador es controlado localmente
+	if not is_multiplayer_authority():
+		camera2d.make_current()  # Activa la cámara del jugador local
 
 func _input(event: InputEvent) -> void:
 	if is_multiplayer_authority():
-		if event.is_action_pressed("test"):
-			test.rpc()
-		if event.is_action_pressed("watering"):
-			watering_action()
-			rpc("watering_action")
-		if event.is_action_pressed("digging"):
-			digging_action()
-			rpc("digging_action")
+		if is_carry == true:
+			if event.is_action_pressed("carry"):
+				carry_action()
+				rpc("carry_action")
+		else:
+			if event.is_action_pressed("test"):
+				test.rpc()
+			if event.is_action_pressed("watering"):
+				watering_action()
+				rpc("watering_action")
+			if event.is_action_pressed("digging"):
+				digging_action()
+				rpc("digging_action")
+			if event.is_action_pressed("carry"):
+				carry_action()
+				rpc("carry_action")
+			if event.is_action_pressed("doing"):
+				doing_action()
+				rpc("doing_action")
 
 
 
@@ -34,9 +55,17 @@ func _physics_process(delta: float) -> void:
 		if direction.x < 0:
 			animated_sprite_2d.flip_h = true
 			marker.position.x = -abs(marker.position.x)
+			if is_carry == true:
+				if is_multiplayer_authority():
+					carry_move()
+					rpc("carry_move")
 		elif direction.x > 0:
 			animated_sprite_2d.flip_h = false
 			marker.position.x = abs(marker.position.x)
+			if is_carry == true:
+				if is_multiplayer_authority():
+					carry_move()
+					rpc("carry_move")
 		animated_sprite_2d.play("walk")
 		velocity.x = direction.x * speed
 		velocity.y = direction.y * speed
@@ -77,3 +106,30 @@ func digging_action() -> void:
 	var dig_instance = dig.instantiate()
 	add_child(dig_instance)
 	dig_instance.digging(self, animated_sprite_2d, sprite_position)
+	
+@rpc("reliable")
+func doing_action() -> void:
+	animated_sprite_2d.visible = false
+	var doing_instance = doing.instantiate()
+	add_child(doing_instance)
+	doing_instance.doing(self, animated_sprite_2d, sprite_position)
+	
+@rpc("reliable")
+func carry_action() -> void:
+	if is_carry == true:
+		carry_instance.stop_carry()
+		carry_instance.queue_free()
+		is_carry = false
+	else:
+		animated_sprite_2d.visible = false
+		carry_instance = carry.instantiate()
+		add_child(carry_instance)
+		carry_instance.carry(self, animated_sprite_2d, sprite_position)
+		is_carry = true
+
+@rpc("reliable")
+func carry_move() -> void:
+	if animated_sprite_2d.flip_h == true:
+		carry_instance.scale.x = -2
+	elif animated_sprite_2d.flip_h == false:
+		carry_instance.scale.x = 2
