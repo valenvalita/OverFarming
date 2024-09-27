@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://usmt8e8tagoy"]
 
-[ext_resource type="Script" path="res://scenes/input_synchronizer.gd" id="1_bmnx0"]
+[ext_resource type="Script" path="res://scenes/synchronizer/input_synchronizer.gd" id="1_bmnx0"]
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_haiyw"]
 properties/0/path = NodePath("InputSynchronizer:move_input")

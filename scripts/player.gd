@@ -10,10 +10,10 @@ var player
 @onready var sprite_position: Marker2D = $SpritePosition
 @onready var camera2d: Camera2D = $Camera2D
 
-var water = preload("res://scenes/watering.tscn")
-var dig = preload("res://scenes/digging.tscn")
-var carry = preload("res://scenes/carry.tscn")
-var doing = preload("res://scenes/doing.tscn")
+var water = preload("res://scenes/actions/watering.tscn")
+var dig = preload("res://scenes/actions/digging.tscn")
+var carry = preload("res://scenes/actions/carry.tscn")
+var doing = preload("res://scenes/actions/doing.tscn")
 var is_carry = false
 var carry_instance : Node2D
 

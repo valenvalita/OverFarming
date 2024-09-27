@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dlhlylw0e64nf" path="res://assets/world/spr_tileset_sunnysideworld_16px.png" id="1_rxpe4"]
 [ext_resource type="Texture2D" uid="uid://broutkqsvsd2f" path="res://assets/world/Boat.png" id="2_llr31"]
-[ext_resource type="Script" path="res://scenes/area_transparent.gd" id="3_igvni"]
+[ext_resource type="Script" path="res://scripts/area_transparent.gd" id="3_igvni"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_x81vm"]
 tile_data = PackedInt32Array(0, 2490368, 0)

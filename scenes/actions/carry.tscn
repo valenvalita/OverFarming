@@ -1,6 +1,6 @@
 [gd_scene load_steps=32 format=3 uid="uid://b2umk6xfavrds"]
 
-[ext_resource type="Script" path="res://scenes/carry.gd" id="1_0qowg"]
+[ext_resource type="Script" path="res://scenes/actions/carry.gd" id="1_0qowg"]
 [ext_resource type="Texture2D" uid="uid://dw2m8csnmrmdx" path="res://assets/actions/carry/base_carry_strip8.png" id="1_ruxss"]
 [ext_resource type="Texture2D" uid="uid://b5lywfshfk38n" path="res://assets/actions/carry/longhair_carry_strip8.png" id="2_85hwg"]
 [ext_resource type="Texture2D" uid="uid://f1x1faxsyn0j" path="res://assets/actions/carry/tools_carry_strip8.png" id="3_qw2nc"]

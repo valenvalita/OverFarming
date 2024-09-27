@@ -1,6 +1,6 @@
 [gd_scene load_steps=32 format=3 uid="uid://cenegpibssdic"]
 
-[ext_resource type="Script" path="res://doing.gd" id="1_w4fnp"]
+[ext_resource type="Script" path="res://scripts/doing.gd" id="1_w4fnp"]
 [ext_resource type="Texture2D" uid="uid://b2wglcwsoqmc4" path="res://assets/actions/doing/base_doing_strip8.png" id="2_yj5ne"]
 [ext_resource type="Texture2D" uid="uid://b8qc2p8mmw5d" path="res://assets/actions/doing/longhair_doing_strip8.png" id="3_s1x1p"]
 [ext_resource type="Texture2D" uid="uid://b2fer7hx3y7ke" path="res://assets/actions/doing/tools_doing_strip8.png" id="4_adpwt"]

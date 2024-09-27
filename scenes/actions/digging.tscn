@@ -1,7 +1,7 @@
 [gd_scene load_steps=47 format=3 uid="uid://umilh4ndssrb"]
 
 [ext_resource type="Texture2D" uid="uid://d1peus5k2c2w6" path="res://assets/actions/digging/base_dig_strip13.png" id="1_de30d"]
-[ext_resource type="Script" path="res://scenes/digging.gd" id="1_rfwr4"]
+[ext_resource type="Script" path="res://scenes/actions/digging.gd" id="1_rfwr4"]
 [ext_resource type="Texture2D" uid="uid://c3dygfx1jl1q1" path="res://assets/actions/digging/longhair_dig_strip13.png" id="2_ckg8t"]
 [ext_resource type="Texture2D" uid="uid://bkuhj0uqp2owr" path="res://assets/actions/digging/tools_dig_strip13.png" id="3_p811q"]
 

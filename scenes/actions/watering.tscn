@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://bw04bp3w70eh"]
 
-[ext_resource type="Script" path="res://scenes/watering.gd" id="1_6aenu"]
+[ext_resource type="Script" path="res://scenes/actions/watering.gd" id="1_6aenu"]
 [ext_resource type="Texture2D" uid="uid://crv3mdptaj4kj" path="res://assets/actions/watering/tools_watering_strip5.png" id="2_k11x6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bcf7a"]
