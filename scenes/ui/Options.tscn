@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://bawfmliwshtxr"]
 
-[ext_resource type="Script" path="res://scenes/main_menu.gd" id="1_i6ct1"]
-[ext_resource type="Texture2D" uid="uid://chev7d16lrbfj" path="res://scenes/Screenshot11-1920x1080-6eaa30c582dd6d4935e73dbadc1457d4.jpg" id="2_7gqpw"]
+[ext_resource type="Script" path="res://main_menu.gd" id="1_h2ali"]
+[ext_resource type="Texture2D" uid="uid://chev7d16lrbfj" path="res://resources/Screenshot11-1920x1080-6eaa30c582dd6d4935e73dbadc1457d4.jpg" id="2_y760i"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cxvin"]
 bg_color = Color(0.0627451, 0.0627451, 0.0627451, 1)
@@ -19,7 +19,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_i6ct1")
+script = ExtResource("1_h2ali")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -37,7 +37,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_7gqpw")
+texture = ExtResource("2_y760i")
 expand_mode = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
