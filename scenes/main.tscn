@@ -10,12 +10,13 @@ player_scene = ExtResource("2_p1kmq")
 
 [node name="Players" type="Node2D" parent="."]
 y_sort_enabled = true
+scale = Vector2(1.4, 1.4)
 
 [node name="Background" type="Node2D" parent="Players"]
 y_sort_enabled = true
-scale = Vector2(2, 2)
+scale = Vector2(2.1, 2.1)
 
-[node name="World2" parent="Players/Background" instance=ExtResource("3_p3f7a")]
+[node name="World" parent="Players/Background" instance=ExtResource("3_p3f7a")]
 
 [node name="Markers" type="Node2D" parent="."]
 
