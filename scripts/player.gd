@@ -3,6 +3,7 @@ var speed = 300
 var acceleration = 1000
 
 var player
+@export var inv: Inv
 @onready var label: Label = $Label
 @onready var input_synchronizer: InputSynchronizer = $InputSynchronizer
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
