@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://lp77weviclyw"
-path="res://.godot/imported/crate_top.png-45d43258ee235c097c2af3e73fb3e090.ctex"
+path="res://.godot/imported/crate_top.png-359bae9c548eb9785669140f0d082ea1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Crops/crate_top.png"
-dest_files=["res://.godot/imported/crate_top.png-45d43258ee235c097c2af3e73fb3e090.ctex"]
+source_file="res://assets/crops/crate_top.png"
+dest_files=["res://.godot/imported/crate_top.png-359bae9c548eb9785669140f0d082ea1.ctex"]
 
 [params]
 

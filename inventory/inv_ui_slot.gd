@@ -1,9 +1,12 @@
 extends Panel
 @onready var item_visual: Sprite2D = $CenterContainer/Panel/item_display
-
-func update(item: InvItem):
-	if !item:
+@onready var amount_text: Label = $CenterContainer/Panel/Label
+func update(slot: InvSlot):
+	if !slot:
 		item_visual.visible = false
+		amount_text.visible
 	else:
 		item_visual.visible = true
-		item_visual.texture = item.texture
+		item_visual.texture = slot.item.texture
+		amount_text.visible = true
+		amount_text.text = str(slot.amount)

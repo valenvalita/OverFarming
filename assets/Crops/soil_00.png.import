@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bv6vrqm44yb3s"
-path="res://.godot/imported/soil_00.png-10586928c4e8006d33ca8e63e47b74be.ctex"
+path="res://.godot/imported/soil_00.png-58d5229e4e0d31c0e8ec2371c1b732b7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Crops/soil_00.png"
-dest_files=["res://.godot/imported/soil_00.png-10586928c4e8006d33ca8e63e47b74be.ctex"]
+source_file="res://assets/crops/soil_00.png"
+dest_files=["res://.godot/imported/soil_00.png-58d5229e4e0d31c0e8ec2371c1b732b7.ctex"]
 
 [params]
 

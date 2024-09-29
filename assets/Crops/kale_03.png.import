@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cl5627uiayul3"
-path="res://.godot/imported/kale_03.png-e81f242ef5dd648d9f81fe3953b676ea.ctex"
+path="res://.godot/imported/kale_03.png-7e32571d5c91c241f74c1c3614774cdc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Crops/kale_03.png"
-dest_files=["res://.godot/imported/kale_03.png-e81f242ef5dd648d9f81fe3953b676ea.ctex"]
+source_file="res://assets/crops/kale_03.png"
+dest_files=["res://.godot/imported/kale_03.png-7e32571d5c91c241f74c1c3614774cdc.ctex"]
 
 [params]
 

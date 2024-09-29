@@ -134,3 +134,6 @@ func carry_move() -> void:
 		carry_instance.scale.x = -2
 	elif animated_sprite_2d.flip_h == false:
 		carry_instance.scale.x = 2
+
+func collect(item):
+	inv.insert(item)
