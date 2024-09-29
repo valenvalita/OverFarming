@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=4 uid="uid://c2yul5p5mhlse"]
+[gd_scene load_steps=8 format=4 uid="uid://c2yul5p5mhlse"]
 
 [ext_resource type="Texture2D" uid="uid://dlhlylw0e64nf" path="res://assets/world/spr_tileset_sunnysideworld_16px.png" id="1_rxpe4"]
 [ext_resource type="Texture2D" uid="uid://broutkqsvsd2f" path="res://assets/world/Boat.png" id="2_llr31"]
 [ext_resource type="Script" path="res://scripts/area_transparent.gd" id="3_igvni"]
+[ext_resource type="PackedScene" uid="uid://bydioafwgisi1" path="res://scenes/collectables/seeds_store.tscn" id="4_2xr40"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_x81vm"]
 tile_data = PackedInt32Array(0, 2490368, 0)
@@ -2364,6 +2365,14 @@ script = ExtResource("3_igvni")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LaVega/Area2D2"]
 position = Vector2(502, -1003.6)
 polygon = PackedVector2Array(69, 1536, 70, 1529, 128, 1529, 128, 1523, 135, 1522, 182, 1498, 214, 1498, 262, 1522, 269, 1522, 269, 1532, 133, 1534)
+
+[node name="seeds_store" parent="." instance=ExtResource("4_2xr40")]
+position = Vector2(52, 647)
+scale = Vector2(0.5, 0.5)
+
+[node name="seeds_store2" parent="." instance=ExtResource("4_2xr40")]
+position = Vector2(178, 647)
+scale = Vector2(0.5, 0.5)
 
 [connection signal="body_entered" from="Farm/Well/Area2D" to="Farm/Well/Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Farm/Well/Area2D" to="Farm/Well/Area2D" method="_on_body_exited"]

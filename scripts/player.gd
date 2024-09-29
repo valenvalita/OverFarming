@@ -3,6 +3,7 @@ var speed = 300
 var acceleration = 1000
 
 var player
+@export var inv: Inv
 @onready var label: Label = $Label
 @onready var input_synchronizer: InputSynchronizer = $InputSynchronizer
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
@@ -133,3 +134,8 @@ func carry_move() -> void:
 		carry_instance.scale.x = -2
 	elif animated_sprite_2d.flip_h == false:
 		carry_instance.scale.x = 2
+
+@rpc("authority", "reliable")	
+func collect(item):
+	if is_multiplayer_authority():
+		inv.insert(item)
