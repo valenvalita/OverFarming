@@ -1,15 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://bawfmliwshtxr"]
+[gd_scene load_steps=6 format=3 uid="uid://cef7hw3q7f6vb"]
 
-[ext_resource type="Script" path="res://main_menu.gd" id="1_h2ali"]
-[ext_resource type="Texture2D" uid="uid://chev7d16lrbfj" path="res://resources/Screenshot11-1920x1080-6eaa30c582dd6d4935e73dbadc1457d4.jpg" id="2_y760i"]
+[ext_resource type="Script" path="res://options.gd" id="1_x5wyr"]
+[ext_resource type="Texture2D" uid="uid://chev7d16lrbfj" path="res://resources/Screenshot11-1920x1080-6eaa30c582dd6d4935e73dbadc1457d4.jpg" id="2_1xelf"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cxvin"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1jdot"]
 bg_color = Color(0.0627451, 0.0627451, 0.0627451, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xpis2"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dqwxq"]
 bg_color = Color(0.0646965, 0.0646965, 0.0646965, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rjoi3"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lye3a"]
 bg_color = Color(0.0627451, 0.0627451, 0.0627451, 1)
 
 [node name="Options" type="Control"]
@@ -19,7 +19,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_h2ali")
+script = ExtResource("1_x5wyr")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -37,7 +37,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_y760i")
+texture = ExtResource("2_1xelf")
 expand_mode = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
@@ -58,21 +58,21 @@ theme_override_constants/separation = 30
 [node name="Volumen" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
-theme_override_styles/normal = SubResource("StyleBoxFlat_cxvin")
+theme_override_styles/normal = SubResource("StyleBoxFlat_1jdot")
 text = "Volumen"
 
-[node name="Resolution" type="Button" parent="VBoxContainer"]
+[node name="Resolucion" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
-theme_override_styles/normal = SubResource("StyleBoxFlat_xpis2")
+theme_override_styles/normal = SubResource("StyleBoxFlat_dqwxq")
 text = "Resolución"
 
 [node name="Back" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
-theme_override_styles/normal = SubResource("StyleBoxFlat_rjoi3")
-text = "Atras"
+theme_override_styles/normal = SubResource("StyleBoxFlat_lye3a")
+text = "Atrás"
 
 [connection signal="pressed" from="VBoxContainer/Volumen" to="." method="_on_volumen_pressed"]
-[connection signal="pressed" from="VBoxContainer/Resolution" to="." method="_on_resolution_pressed"]
+[connection signal="pressed" from="VBoxContainer/Resolucion" to="." method="_on_resolucion_pressed"]
 [connection signal="pressed" from="VBoxContainer/Back" to="." method="_on_back_pressed"]
