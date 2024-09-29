@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://bydioafwgisi1"]
+
+[ext_resource type="Texture2D" uid="uid://ydwx2gh2sbg1" path="res://assets/crops/carrot_seeds.png" id="1_7gihe"]
+[ext_resource type="Script" path="res://scenes/collectables/seeds_store.gd" id="1_jr4we"]
+[ext_resource type="Resource" uid="uid://7e32vcjkn4xn" path="res://inventory/items/carrot.tres" id="2_r3aqa"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xwuou"]
+atlas = ExtResource("1_7gihe")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2rfhg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xwuou")
+}],
+"loop": true,
+"name": &"seeds",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_r72ll"]
+radius = 28.0
+
+[node name="seeds_store" type="Node2D"]
+script = ExtResource("1_jr4we")
+item = ExtResource("2_r3aqa")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_2rfhg")
+animation = &"seeds"
+
+[node name="pickable_area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pickable_area"]
+shape = SubResource("CircleShape2D_r72ll")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+
+[connection signal="body_entered" from="pickable_area" to="." method="_on_pickable_area_body_entered"]
+[connection signal="body_exited" from="pickable_area" to="." method="_on_pickable_area_body_exited"]

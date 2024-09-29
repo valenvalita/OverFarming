@@ -1,6 +1,7 @@
 extends Control
 @onready var inv: Inv = preload("res://inventory/player_inventory.tres")
 @onready var slots: Array = $NinePatchRect/GridContainer.get_children()
+
 var is_open = false
 
 # Called when the node enters the scene tree for the first time.
