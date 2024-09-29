@@ -135,5 +135,7 @@ func carry_move() -> void:
 	elif animated_sprite_2d.flip_h == false:
 		carry_instance.scale.x = 2
 
+@rpc("authority", "reliable")	
 func collect(item):
-	inv.insert(item)
+	if is_multiplayer_authority():
+		inv.insert(item)
