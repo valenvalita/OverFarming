@@ -1,6 +1,7 @@
 extends Control
 
 
+
 func resume():
 	get_tree().paused = false
 	$AnimationPlayer.play_backwards("blur")
@@ -10,10 +11,11 @@ func pause():
 	$AnimationPlayer.play("blur")
 
 func TestEsc():
-	if Input.is_action_just_pressed("esc") and !get_tree().paused:
-		pause()
-	elif Input.is_action_just_pressed("esc") and get_tree().paused:
-		resume()
+	if GameFunctions.can_pause:
+		if Input.is_action_just_pressed("esc") and !get_tree().paused:
+			pause()
+		elif Input.is_action_just_pressed("esc") and get_tree().paused:
+			resume()
 
 func _process(delta):
 	TestEsc()
