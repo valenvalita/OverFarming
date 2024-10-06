@@ -6,7 +6,7 @@ extends Node2D
 @onready var time: Control = $CanvasLayer/Time
 var seconds = 0
 var minutes = 0
-var Dseconds = 5
+var Dseconds = 180
 var Dminutes = 0
 
 func _ready() -> void:

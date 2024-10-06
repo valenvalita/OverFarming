@@ -10,40 +10,50 @@ var player
 @onready var marker: Marker2D = $Marker2D
 @onready var sprite_position: Marker2D = $SpritePosition
 @onready var camera2d: Camera2D = $Camera2D
+@onready var hotbar: Control = $HotbarInterface/Hotbar
 
 var water = preload("res://scenes/actions/watering.tscn")
 var dig = preload("res://scenes/actions/digging.tscn")
 var carry = preload("res://scenes/actions/carry.tscn")
 var doing = preload("res://scenes/actions/doing.tscn")
+var selector = preload("res://scenes/hotbar/selector.tscn")
 var is_carry = false
 var carry_instance : Node2D
+var selector_instance : Node2D
+const NUM_HOTBAR_SLOTS = 4
+var active_item_slot = 0
 
 func _ready() -> void:
-	# Solo activa la cámara si este jugador es controlado localmente
 	if not is_multiplayer_authority():
-		camera2d.make_current()  # Activa la cámara del jugador local
+		camera2d.make_current()
 
 func _input(event: InputEvent) -> void:
 	if is_multiplayer_authority():
 		if is_carry == true:
-			if event.is_action_pressed("carry"):
-				carry_action()
-				rpc("carry_action")
+			if event.is_action_pressed("doing"):
+				if active_item_slot == 2:
+					carry_action()
+					rpc("carry_action")
 		else:
 			if event.is_action_pressed("test"):
 				test.rpc()
-			if event.is_action_pressed("watering"):
-				watering_action()
-				rpc("watering_action")
-			if event.is_action_pressed("digging"):
-				digging_action()
-				rpc("digging_action")
-			if event.is_action_pressed("carry"):
-				carry_action()
-				rpc("carry_action")
 			if event.is_action_pressed("doing"):
-				doing_action()
-				rpc("doing_action")
+				if active_item_slot == 0:
+					watering_action()
+					rpc("watering_action")
+				elif active_item_slot == 1:
+					digging_action()
+					rpc("digging_action")
+				elif active_item_slot == 2:
+					carry_action()
+					rpc("carry_action")
+				elif active_item_slot == 3:
+					doing_action()
+					rpc("doing_action")
+			if event.is_action_pressed("Scroll_Down"):
+				active_item_scroll_down()
+			if event.is_action_pressed("Scroll_Up"):
+				active_item_scroll_up()
 
 
 
@@ -83,7 +93,7 @@ func setup(player_data: Statics.PlayerData) -> void:
 	set_multiplayer_authority(player_data.id)
 	label.text = player_data.name
 	player = player_data
-
+	hotbar.visible = is_multiplayer_authority()
 
 @rpc("authority", "call_local", "unreliable")
 func test():
@@ -139,3 +149,14 @@ func carry_move() -> void:
 func collect(item):
 	if is_multiplayer_authority():
 		inv.insert(item)
+
+func active_item_scroll_up() -> void:
+	active_item_slot = (active_item_slot + 1) % NUM_HOTBAR_SLOTS
+	hotbar.hotbar_selector(active_item_slot)
+
+func active_item_scroll_down() -> void:
+	if active_item_slot == 0:
+		active_item_slot = NUM_HOTBAR_SLOTS - 1
+	else:
+		active_item_slot -= 1
+	hotbar.hotbar_selector(active_item_slot)
