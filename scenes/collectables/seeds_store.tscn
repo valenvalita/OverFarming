@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://bydioafwgisi1"]
 
-[ext_resource type="Texture2D" uid="uid://ydwx2gh2sbg1" path="res://assets/crops/carrot_seeds.png" id="1_7gihe"]
+[ext_resource type="Texture2D" uid="uid://ydwx2gh2sbg1" path="res://assets/Crops/carrot_seeds.png" id="1_7gihe"]
 [ext_resource type="Script" path="res://scenes/collectables/seeds_store.gd" id="1_jr4we"]
 [ext_resource type="Resource" uid="uid://7e32vcjkn4xn" path="res://inventory/items/carrot.tres" id="2_r3aqa"]
 
