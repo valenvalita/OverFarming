@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://c7sby2q4xdmny"]
+
+[ext_resource type="Script" path="res://scenes/hotbar/box_slot.gd" id="1_bckm2"]
+[ext_resource type="Texture2D" uid="uid://dvm4lc3e4aciv" path="res://assets/ui/inventory-slot.png" id="1_niq5h"]
+[ext_resource type="Texture2D" uid="uid://dtiaqa4w46x8v" path="res://assets/tools/crate_base.png" id="2_bfg52"]
+
+[node name="Control" type="Panel"]
+custom_minimum_size = Vector2(16, 16)
+anchors_preset = -1
+anchor_right = 1.016
+anchor_bottom = 1.0
+offset_right = -1154.43
+offset_bottom = -632.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bckm2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_niq5h")
+centered = false
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(8, 8)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("2_bfg52")
