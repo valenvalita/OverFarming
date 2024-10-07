@@ -25,6 +25,6 @@ func _process(delta: float) -> void:
 		GameState.VICTORY:
 			print("¡Has ganado!")
 		GameState.PLAYING:
-			#print("El juego está en progreso")
 			pass
+			#print("El juego está en progreso")
 	pass

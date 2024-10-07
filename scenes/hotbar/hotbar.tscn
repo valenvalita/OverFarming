@@ -1,0 +1,78 @@
+[gd_scene load_steps=8 format=3 uid="uid://cy311xttot30n"]
+
+[ext_resource type="Texture2D" uid="uid://bg81oe1dyxx8a" path="res://assets/ui/inventory-background.png" id="1_ht2wt"]
+[ext_resource type="Script" path="res://scenes/hotbar/hotbar.gd" id="1_svliw"]
+[ext_resource type="PackedScene" uid="uid://w8smpbs8xxo3" path="res://scenes/hotbar/water_slot.tscn" id="2_kxm38"]
+[ext_resource type="PackedScene" uid="uid://dygar5gpwynty" path="res://scenes/hotbar/shovel_slot.tscn" id="3_gqupd"]
+[ext_resource type="PackedScene" uid="uid://c7sby2q4xdmny" path="res://scenes/hotbar/box_slot.tscn" id="4_tkxdn"]
+[ext_resource type="PackedScene" uid="uid://dvraw37kf4imh" path="res://scenes/hotbar/hoe_slot.tscn" id="5_7hg0v"]
+[ext_resource type="PackedScene" uid="uid://dqc3rxvwa7ea" path="res://scenes/hotbar/selector.tscn" id="7_hx2ps"]
+
+[node name="Hotbar" type="Control"]
+layout_mode = 3
+anchor_right = 0.078
+anchor_bottom = 0.03
+offset_right = -89.856
+offset_bottom = -19.44
+script = ExtResource("1_svliw")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_right = 90.0
+offset_bottom = 20.0
+texture = ExtResource("1_ht2wt")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="GridContainer" type="GridContainer" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -38.0
+offset_top = -8.0
+offset_right = 38.0
+offset_bottom = 9.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 4
+
+[node name="Panel1" parent="NinePatchRect/GridContainer" instance=ExtResource("2_kxm38")]
+layout_mode = 2
+
+[node name="Marker2D" type="Marker2D" parent="NinePatchRect/GridContainer/Panel1"]
+position = Vector2(8, 8)
+
+[node name="Selector" parent="NinePatchRect/GridContainer/Panel1" instance=ExtResource("7_hx2ps")]
+position = Vector2(8, 8)
+
+[node name="Panel2" parent="NinePatchRect/GridContainer" instance=ExtResource("3_gqupd")]
+layout_mode = 2
+
+[node name="Marker2D" type="Marker2D" parent="NinePatchRect/GridContainer/Panel2"]
+position = Vector2(8, 8)
+
+[node name="Selector" parent="NinePatchRect/GridContainer/Panel2" instance=ExtResource("7_hx2ps")]
+position = Vector2(8, 8)
+
+[node name="Panel3" parent="NinePatchRect/GridContainer" instance=ExtResource("4_tkxdn")]
+layout_mode = 2
+
+[node name="Marker2D" type="Marker2D" parent="NinePatchRect/GridContainer/Panel3"]
+position = Vector2(8, 8)
+
+[node name="Selector" parent="NinePatchRect/GridContainer/Panel3" instance=ExtResource("7_hx2ps")]
+position = Vector2(8, 8)
+
+[node name="Panel4" parent="NinePatchRect/GridContainer" instance=ExtResource("5_7hg0v")]
+layout_mode = 2
+
+[node name="Marker2D" type="Marker2D" parent="NinePatchRect/GridContainer/Panel4"]
+position = Vector2(8, 8)
+
+[node name="Selector" parent="NinePatchRect/GridContainer/Panel4" instance=ExtResource("7_hx2ps")]
+position = Vector2(8, 8)
