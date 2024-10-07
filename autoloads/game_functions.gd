@@ -3,9 +3,10 @@ extends Node
 enum GameState { PAUSE, DEFEAT, VICTORY, PLAYING }
 
 var current_state = GameState.PLAYING
-
 var can_pause = true
 
+var plant_selected = 1 # 1 carrot 
+var n_of_carrots = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -24,5 +25,6 @@ func _process(delta: float) -> void:
 		GameState.VICTORY:
 			print("¡Has ganado!")
 		GameState.PLAYING:
-			print("El juego está en progreso")
+			#print("El juego está en progreso")
+			pass
 	pass

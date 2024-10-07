@@ -1,0 +1,93 @@
+[gd_scene load_steps=15 format=3 uid="uid://dqhpgknhdp1d3"]
+
+[ext_resource type="Script" path="res://farming_system/growing_zone.gd" id="1_7h3qe"]
+[ext_resource type="Texture2D" uid="uid://bv6vrqm44yb3s" path="res://assets/Crops/soil_00.png" id="2_2ybeq"]
+[ext_resource type="Texture2D" uid="uid://cb0rd7ui0soxx" path="res://assets/Crops/carrot_01.png" id="3_lb7wh"]
+[ext_resource type="Texture2D" uid="uid://cl247rwc10tw0" path="res://assets/Crops/carrot_02.png" id="4_fuydl"]
+[ext_resource type="Texture2D" uid="uid://bo2rs0cuar10h" path="res://assets/Crops/carrot_03.png" id="5_i58ua"]
+[ext_resource type="Texture2D" uid="uid://bsms4nkbbwjbb" path="res://assets/Crops/carrot_04.png" id="6_ol02o"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w71if"]
+atlas = ExtResource("2_2ybeq")
+region = Rect2(0, 0, 16, 12)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iyms3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w71if")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_elbbc"]
+radius = 6.08276
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0b252"]
+atlas = ExtResource("3_lb7wh")
+region = Rect2(0, 0, 6, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_au85y"]
+atlas = ExtResource("4_fuydl")
+region = Rect2(0, 0, 6, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ykxu6"]
+atlas = ExtResource("5_i58ua")
+region = Rect2(0, 0, 8, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l4a7y"]
+atlas = ExtResource("6_ol02o")
+region = Rect2(0, 0, 10, 13)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8ppc0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0b252")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_au85y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ykxu6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l4a7y")
+}],
+"loop": true,
+"name": &"carrot_growing",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"default",
+"speed": 0.0
+}]
+
+[node name="growing_zone" type="StaticBody2D"]
+script = ExtResource("1_7h3qe")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_iyms3")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_elbbc")
+
+[node name="plant" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -2)
+sprite_frames = SubResource("SpriteFrames_8ppc0")
+animation = &"carrot_growing"
+
+[node name="grow_timer" type="Timer" parent="."]
+wait_time = 5.0
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="timeout" from="grow_timer" to="." method="_on_grow_timer_timeout"]

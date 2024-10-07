@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://db848bldmiyk5"]
+
+[ext_resource type="Script" path="res://farming_system/carrot_seed_pack.gd" id="1_05jta"]
+[ext_resource type="Texture2D" uid="uid://ydwx2gh2sbg1" path="res://assets/Crops/carrot_seeds.png" id="2_h0jvc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4bj14"]
+atlas = ExtResource("2_h0jvc")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mxl7b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4bj14")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ummxf"]
+radius = 11.0
+height = 28.0
+
+[node name="carrot_seed_pack" type="StaticBody2D"]
+script = ExtResource("1_05jta")
+
+[node name="seed_pack_sprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_mxl7b")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -1)
+shape = SubResource("CapsuleShape2D_ummxf")
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
