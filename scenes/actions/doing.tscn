@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://cenegpibssdic"]
+[gd_scene load_steps=33 format=3 uid="uid://cenegpibssdic"]
 
 [ext_resource type="Script" path="res://scripts/doing.gd" id="1_w4fnp"]
 [ext_resource type="Texture2D" uid="uid://b2wglcwsoqmc4" path="res://assets/actions/doing/base_doing_strip8.png" id="2_yj5ne"]
@@ -197,6 +197,10 @@ animations = [{
 "speed": 12.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ege72"]
+radius = 3.0
+height = 8.0
+
 [node name="Doing" type="Node2D"]
 scale = Vector2(2, 2)
 script = ExtResource("1_w4fnp")
@@ -211,3 +215,11 @@ animation = &"new_animation"
 
 [node name="toolDoing" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_srpoe")
+frame_progress = 0.0103657
+
+[node name="AffectedArea" type="Area2D" parent="." groups=["ToolEfect"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AffectedArea"]
+position = Vector2(7, 5)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_ege72")

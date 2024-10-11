@@ -1,14 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://dqc3rxvwa7ea"]
+[gd_scene load_steps=5 format=3 uid="uid://dqc3rxvwa7ea"]
 
-[ext_resource type="Script" path="res://scenes/hotbar/selector.gd" id="1_oqymk"]
-[ext_resource type="Texture2D" uid="uid://n5bvkehqia16" path="res://assets/hotbar/selectbox_tr.png" id="1_xycer"]
-[ext_resource type="Texture2D" uid="uid://bgwbbbg06mhgb" path="res://assets/hotbar/selectbox_tl.png" id="2_fy2fx"]
-[ext_resource type="Texture2D" uid="uid://cr6kcm2mhg3nh" path="res://assets/hotbar/selectbox_br.png" id="3_dus1t"]
-[ext_resource type="Texture2D" uid="uid://dexf8ppeu13n7" path="res://assets/hotbar/selectbox_bl.png" id="4_208k2"]
+[ext_resource type="Texture2D" uid="uid://b1fjxpmqarw6f" path="res://assets/hotbar/selectbox_tr.png" id="1_xycer"]
+[ext_resource type="Texture2D" uid="uid://c7gq6bawc40yi" path="res://assets/hotbar/selectbox_tl.png" id="2_fy2fx"]
+[ext_resource type="Texture2D" uid="uid://dgyqbd4ind2eu" path="res://assets/hotbar/selectbox_br.png" id="3_dus1t"]
+[ext_resource type="Texture2D" uid="uid://w7o38o0d43yb" path="res://assets/hotbar/selectbox_bl.png" id="4_208k2"]
 
 [node name="Selector" type="Node2D"]
 scale = Vector2(0.8, 0.8)
-script = ExtResource("1_oqymk")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(8, -8)

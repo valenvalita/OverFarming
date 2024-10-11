@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dvm4lc3e4aciv" path="res://assets/ui/inventory-slot.png" id="1_q42yf"]
 [ext_resource type="Script" path="res://scenes/hotbar/shovel_slot.gd" id="1_rsiqa"]
-[ext_resource type="Texture2D" uid="uid://cr6svf1g6e8b6" path="res://assets/tools/shovel.png" id="2_tvxru"]
+[ext_resource type="Texture2D" uid="uid://5ocqgsc24mk6" path="res://assets/tools/shovel.png" id="2_tvxru"]
 
 [node name="Control" type="Panel"]
 custom_minimum_size = Vector2(16, 16)

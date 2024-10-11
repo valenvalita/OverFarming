@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://bkvdcld6sp21y"]
+[gd_scene load_steps=27 format=3 uid="uid://bkvdcld6sp21y"]
 
 [ext_resource type="Resource" uid="uid://p2hirb0k4dcr" path="res://inventory/player_inventory.tres" id="2_a6vic"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="2_nlo8y"]
@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://usmt8e8tagoy" path="res://scenes/synchronizer/input_synchronizer.tscn" id="3_je07h"]
 [ext_resource type="Texture2D" uid="uid://4vf3owus56p7" path="res://assets/walk_strip8.png" id="4_7bqrl"]
 [ext_resource type="PackedScene" uid="uid://bx6qi23y6hcqh" path="res://inventory/inv_ui.tscn" id="6_jfj3o"]
-[ext_resource type="Script" path="res://scenes/hotbar/hotbar_interface.gd" id="7_bt600"]
 [ext_resource type="PackedScene" uid="uid://cy311xttot30n" path="res://scenes/hotbar/hotbar.tscn" id="7_qx86f"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s5pf6"]
@@ -187,7 +186,6 @@ grow_horizontal = 1
 grow_vertical = 1
 
 [node name="HotbarInterface" type="CanvasLayer" parent="."]
-script = ExtResource("7_bt600")
 
 [node name="Hotbar" parent="HotbarInterface" instance=ExtResource("7_qx86f")]
 anchor_left = 0.395

@@ -5,6 +5,7 @@ extends Node2D
 var doing_duration = 1.0
 var doing_timer = 0.0
 var is_doing = false
+var action_type = "doing"
 
 func doing(player : CharacterBody2D, animated: AnimatedSprite2D, marker : Marker2D) -> void:
 	player.set_process_input(false)
@@ -37,3 +38,4 @@ func _on_doing_timeout() -> void:
 	animated_sprite_2d.visible = true
 	player_actual.set_process_input(true)
 	player_actual.set_physics_process(true)
+	queue_free()

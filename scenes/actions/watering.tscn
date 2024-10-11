@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bw04bp3w70eh"]
+[gd_scene load_steps=10 format=3 uid="uid://bw04bp3w70eh"]
 
 [ext_resource type="Script" path="res://scenes/actions/watering.gd" id="1_6aenu"]
 [ext_resource type="Texture2D" uid="uid://crv3mdptaj4kj" path="res://assets/actions/watering/tools_watering_strip5.png" id="2_k11x6"]
@@ -46,6 +46,10 @@ animations = [{
 "speed": 12.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bsftw"]
+radius = 5.0
+height = 16.0
+
 [node name="Watering" type="Node2D"]
 script = ExtResource("1_6aenu")
 
@@ -54,5 +58,11 @@ position = Vector2(16, 7)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_v0idq")
 animation = &"watering"
-frame = 3
-frame_progress = 0.899101
+frame_progress = 0.0156408
+
+[node name="WetArea" type="Area2D" parent="." groups=["ToolEfect"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WetArea"]
+position = Vector2(31, 13)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_bsftw")

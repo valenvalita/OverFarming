@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/hotbar/hoe_slot.gd" id="1_66jdm"]
 [ext_resource type="Texture2D" uid="uid://dvm4lc3e4aciv" path="res://assets/ui/inventory-slot.png" id="1_y7c7f"]
-[ext_resource type="Texture2D" uid="uid://bgy34qs1ibamf" path="res://assets/tools/pickaxe.png" id="2_gdw50"]
+[ext_resource type="Texture2D" uid="uid://58svsqp4u3y6" path="res://assets/tools/pickaxe.png" id="2_gdw50"]
 
 [node name="Control" type="Panel"]
 custom_minimum_size = Vector2(16, 16)
