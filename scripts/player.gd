@@ -55,8 +55,6 @@ func _input(event: InputEvent) -> void:
 			if event.is_action_pressed("Scroll_Up"):
 				active_item_scroll_up()
 
-
-
 @warning_ignore("unused_parameter")
 func _physics_process(delta: float) -> void:
 	var move_input = input_synchronizer.move_input
@@ -145,9 +143,9 @@ func carry_move() -> void:
 	elif animated_sprite_2d.flip_h == false:
 		carry_instance.scale.x = 2
 
-@rpc("authority", "reliable")	
 func collect(item):
 	if is_multiplayer_authority():
+		print("Se recoge item")
 		inv.insert(item)
 
 func active_item_scroll_up() -> void:

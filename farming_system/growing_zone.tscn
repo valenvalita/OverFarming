@@ -1,7 +1,8 @@
-[gd_scene load_steps=21 format=3 uid="uid://dqhpgknhdp1d3"]
+[gd_scene load_steps=22 format=3 uid="uid://dqhpgknhdp1d3"]
 
 [ext_resource type="Script" path="res://farming_system/growing_zone.gd" id="1_7h3qe"]
 [ext_resource type="Texture2D" uid="uid://bv6vrqm44yb3s" path="res://assets/Crops/soil_00.png" id="2_2ybeq"]
+[ext_resource type="Resource" uid="uid://7e32vcjkn4xn" path="res://inventory/items/carrot.tres" id="2_6dkxi"]
 [ext_resource type="Texture2D" uid="uid://4qctmer2mvcd" path="res://assets/Crops/soil_01.png" id="3_2xa08"]
 [ext_resource type="Texture2D" uid="uid://bvqcstk1m67pt" path="res://assets/Crops/soil_04.png" id="3_eamal"]
 [ext_resource type="Texture2D" uid="uid://cb0rd7ui0soxx" path="res://assets/Crops/carrot_01.png" id="3_lb7wh"]
@@ -95,6 +96,7 @@ animations = [{
 
 [node name="growing_zone" type="StaticBody2D"]
 script = ExtResource("1_7h3qe")
+item = ExtResource("2_6dkxi")
 
 [node name="soil_sprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_iyms3")
@@ -117,6 +119,5 @@ wait_time = 5.0
 one_shot = true
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
-[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
 [connection signal="timeout" from="grow_timer" to="." method="_on_grow_timer_timeout"]
 [connection signal="timeout" from="start_growing_plant" to="." method="_on_start_growing_plant_timeout"]

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/hotbar/hoe_slot.gd" id="1_66jdm"]
 [ext_resource type="Texture2D" uid="uid://dvm4lc3e4aciv" path="res://assets/ui/inventory-slot.png" id="1_y7c7f"]
-[ext_resource type="Texture2D" uid="uid://58svsqp4u3y6" path="res://assets/tools/pickaxe.png" id="2_gdw50"]
+[ext_resource type="Texture2D" uid="uid://d1nxctpg0rt3a" path="res://assets/tools/gloves.png" id="3_6sir1"]
 
 [node name="Control" type="Panel"]
 custom_minimum_size = Vector2(16, 16)
@@ -21,5 +21,5 @@ centered = false
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
 position = Vector2(8, 8)
-scale = Vector2(0.807692, 0.807692)
-texture = ExtResource("2_gdw50")
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("3_6sir1")
