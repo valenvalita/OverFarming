@@ -31,6 +31,9 @@ gizmo_extents = 100.0
 position = Vector2(900, 317)
 gizmo_extents = 100.0
 
+[node name="Marker2D3" type="Marker2D" parent="Markers"]
+position = Vector2(1076, 195)
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("4_1bgdh")]
@@ -51,10 +54,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "1:30"
-
-[node name="growing_zone" parent="." instance=ExtResource("5_ey38r")]
-position = Vector2(966, 396)
-scale = Vector2(2.5, 2.5)
 
 [node name="growing_zone2" parent="." instance=ExtResource("5_ey38r")]
 position = Vector2(919, 396)
