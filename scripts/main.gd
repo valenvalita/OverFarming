@@ -6,7 +6,7 @@ extends Node2D
 @onready var time: Control = $CanvasLayer/Time
 var seconds = 0
 var minutes = 0
-var Dseconds = 180
+var Dseconds = 5
 var Dminutes = 0
 
 func _ready() -> void:
@@ -24,6 +24,7 @@ func _on_timer_timeout() -> void:
 		seconds = 60
 	elif seconds == 0 and minutes == 0:
 		GameFunctions.current_state = GameFunctions.GameState.DEFEAT
+		get_tree().change_scene_to_file("res://scenes/ui/lose_screen.tscn")
 		return
 	seconds -=1
 	time.text = str(minutes) + ":" + str(seconds)
