@@ -8,9 +8,14 @@ var can_pause = true
 var plant_selected = 1 # 1 carrot 
 var n_of_carrots = 0
 
+var random_number : int = randi_range(1,20)
+var rng = RandomNumberGenerator.new()
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	random_number = 10
+	#random_number = randi_range(1,20)
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -28,3 +33,8 @@ func _process(delta: float) -> void:
 			pass
 			#print("El juego está en progreso")
 	pass
+	
+func generate_requests():
+	print("Número generado en GameFunctions: ", random_number)
+	random_number = rng.randi_range(1, 20)
+	

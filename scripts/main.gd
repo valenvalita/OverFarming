@@ -17,6 +17,8 @@ func _ready() -> void:
 		players.add_child(player_inst)
 		player_inst.setup(player_data)
 		player_inst.global_position = markers.get_child(i).global_position
+		
+		
 
 func _on_timer_timeout() -> void:
 	if seconds == 0 and minutes > 0:
