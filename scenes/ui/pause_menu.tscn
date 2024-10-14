@@ -113,7 +113,6 @@ layout_mode = 2
 text = "Continuar"
 
 [node name="Main Menu" type="Button" parent="PanelContainer/VBoxContainer"]
-visible = false
 layout_mode = 2
 text = "Menu principal"
 
