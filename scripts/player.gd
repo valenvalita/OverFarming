@@ -11,6 +11,8 @@ var player
 @onready var sprite_position: Marker2D = $SpritePosition
 @onready var camera2d: Camera2D = $Camera2D
 @onready var hotbar: Control = $HotbarInterface/Hotbar
+@onready var requests : Control = $HotbarInterface/Requests
+@onready var requests_label = $HotbarInterface/Requests/NinePatchRect/GridContainer/Contador/Label
 
 var water = preload("res://scenes/actions/watering.tscn")
 var dig = preload("res://scenes/actions/digging.tscn")
@@ -22,6 +24,8 @@ var carry_instance : Node2D
 var selector_instance : Node2D
 const NUM_HOTBAR_SLOTS = 4
 var active_item_slot = 0
+
+var rng = RandomNumberGenerator.new()
 
 func _ready() -> void:
 	if not is_multiplayer_authority():
@@ -92,6 +96,8 @@ func setup(player_data: Statics.PlayerData) -> void:
 	label.text = player_data.name
 	player = player_data
 	hotbar.visible = is_multiplayer_authority()
+	requests.visible = is_multiplayer_authority()
+	requests.generate(GameFunctions.random_number)
 
 @rpc("authority", "call_local", "unreliable")
 func test():
