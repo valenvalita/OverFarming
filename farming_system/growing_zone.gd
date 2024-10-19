@@ -24,6 +24,7 @@ func _ready() -> void:
 	soil_sprite.frame = 0 # Tierra sin nada
 	animated_plant.play("default")
 	
+@warning_ignore("unused_parameter")	
 func _physics_process(delta: float) -> void:
 	# Actualizar planta seleccionada 
 	if not plant_growing:

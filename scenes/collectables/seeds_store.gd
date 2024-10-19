@@ -11,7 +11,7 @@ var player = null
 func _ready() -> void:
 	pass # Replace with function body.
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+@warning_ignore("unused_parameter")
 func _process(delta: float) -> void:
 	if player_in_area:
 		if Input.is_action_just_pressed("pick_item"):

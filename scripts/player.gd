@@ -92,7 +92,8 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, speed)
 		velocity.y = move_toward(velocity.y, 0, speed)
 		animated_sprite_2d.play("idle")
-	send_position.rpc(position, velocity)
+	if is_multiplayer_authority():
+		rpc("send_position", position, velocity)
 	move_and_slide()
 
 func setup(player_data: Statics.PlayerData) -> void:
@@ -108,8 +109,7 @@ func setup(player_data: Statics.PlayerData) -> void:
 func test():
 	Debug.log("test %s" % player.name)
 
-
-@rpc
+@rpc("authority")
 func send_position(pos: Vector2, vel: Vector2) -> void:
 	position = lerp(position, pos, 0.5)
 	velocity = lerp(velocity, vel, 0.5)

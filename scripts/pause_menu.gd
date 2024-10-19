@@ -18,7 +18,8 @@ func TestEsc():
 			pause()
 		elif Input.is_action_just_pressed("esc") and get_tree().paused:
 			resume()
-
+			
+@warning_ignore("unused_parameter")
 func _process(delta):
 	TestEsc()
 

@@ -22,7 +22,7 @@ func close():
 	visible = false
 	is_open = false
 	
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+@warning_ignore("unused_parameter")
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("inventory") and is_multiplayer_authority():
 		if is_open:
