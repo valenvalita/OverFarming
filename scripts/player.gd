@@ -92,7 +92,7 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, speed)
 		velocity.y = move_toward(velocity.y, 0, speed)
 		animated_sprite_2d.play("idle")
-	
+	send_position.rpc(position, velocity)
 	move_and_slide()
 
 func setup(player_data: Statics.PlayerData) -> void:
