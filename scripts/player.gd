@@ -9,7 +9,8 @@ var player
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var marker: Marker2D = $Marker2D
 @onready var sprite_position: Marker2D = $SpritePosition
-@onready var camera2d: Camera2D = $Camera2D
+@onready var camera_2d: Camera2D = %Camera2D
+
 @onready var hotbar: Control = $HotbarInterface/Hotbar
 @onready var requests : Control = $HotbarInterface/Requests
 @onready var requests_label = $HotbarInterface/Requests/NinePatchRect/GridContainer/Contador/Label
@@ -28,8 +29,9 @@ var active_item_slot = 0
 var rng = RandomNumberGenerator.new()
 
 func _ready() -> void:
-	if not is_multiplayer_authority():
-		camera2d.make_current()
+	if is_multiplayer_authority():
+		camera_2d.make_current()  # Activa la cámara solo para el jugador local
+
 
 func _input(event: InputEvent) -> void:
 	if is_multiplayer_authority():
@@ -58,9 +60,12 @@ func _input(event: InputEvent) -> void:
 				active_item_scroll_down()
 			if event.is_action_pressed("Scroll_Up"):
 				active_item_scroll_up()
-
+						
 @warning_ignore("unused_parameter")
 func _physics_process(delta: float) -> void:
+	if is_multiplayer_authority(): #TODO: ver alternativa a esto?
+		camera_2d.make_current()
+
 	var move_input = input_synchronizer.move_input
 	var direction = (Vector2(move_input.x, move_input.y)).normalized()
 
