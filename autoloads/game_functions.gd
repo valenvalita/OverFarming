@@ -8,6 +8,8 @@ var can_pause = true
 var plant_selected = 1 # 1 carrot 
 var n_of_carrots = 0
 
+var n_delivery_carrots = 2
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -28,3 +30,10 @@ func _process(delta: float) -> void:
 			pass
 			#print("El juego está en progreso")
 	pass
+
+func update_delivery(cnt_items):
+	n_delivery_carrots = max(n_delivery_carrots - cnt_items, 0)
+	print(n_delivery_carrots)
+	if n_delivery_carrots==0:
+		print("HAS GANADO!")
+	

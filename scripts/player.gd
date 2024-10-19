@@ -147,6 +147,12 @@ func collect(item):
 	if is_multiplayer_authority():
 		print("Se recoge item")
 		inv.insert(item)
+		
+func remove_item(item):
+	if is_multiplayer_authority():
+		print("Se elimina item")
+		var cnt_item = inv.remove_item(item)
+		return cnt_item
 
 func active_item_scroll_up() -> void:
 	active_item_slot = (active_item_slot + 1) % NUM_HOTBAR_SLOTS

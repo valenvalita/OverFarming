@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=4 uid="uid://c2yul5p5mhlse"]
+[gd_scene load_steps=10 format=4 uid="uid://c2yul5p5mhlse"]
 
 [ext_resource type="Texture2D" uid="uid://dlhlylw0e64nf" path="res://assets/world/spr_tileset_sunnysideworld_16px.png" id="1_rxpe4"]
 [ext_resource type="Texture2D" uid="uid://broutkqsvsd2f" path="res://assets/world/Boat.png" id="2_llr31"]
 [ext_resource type="Script" path="res://scripts/area_transparent.gd" id="3_igvni"]
 [ext_resource type="PackedScene" uid="uid://bydioafwgisi1" path="res://scenes/collectables/seeds_store.tscn" id="4_2xr40"]
 [ext_resource type="PackedScene" uid="uid://dqhpgknhdp1d3" path="res://farming_system/growing_zone.tscn" id="5_85j8b"]
+[ext_resource type="PackedScene" uid="uid://f7krvksfih7r" path="res://scenes/delivery_zone.tscn" id="6_536cy"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_x81vm"]
 tile_data = PackedInt32Array(0, 2490368, 0)
@@ -2377,6 +2378,9 @@ scale = Vector2(0.5, 0.5)
 
 [node name="growing_zone" parent="." instance=ExtResource("5_85j8b")]
 position = Vector2(344, 104)
+
+[node name="delivery_zone" parent="." instance=ExtResource("6_536cy")]
+position = Vector2(688, 595)
 
 [connection signal="body_entered" from="Farm/Well/Area2D" to="Farm/Well/Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Farm/Well/Area2D" to="Farm/Well/Area2D" method="_on_body_exited"]

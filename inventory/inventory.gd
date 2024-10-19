@@ -23,3 +23,15 @@ func insert(item: InvItem):
 			else:
 				print("Ya has alcanzado el máximo de almacenamiento")
 	update.emit()
+
+func remove_item(item: InvItem) -> int:
+	var itemslots = slots.filter(func(slot): return slot.item == item)
+	if !itemslots.is_empty():
+		var quantity = itemslots[0].amount  # Obtener la cantidad del ítem
+		itemslots[0].item = null  # Eliminar el ítem del inventario
+		itemslots[0].amount = 0   # Restablecer la cantidad a 0
+		update.emit()  # Emitir la señal de actualización
+		return quantity  # Devolver la cantidad eliminada
+	else:
+		print("El ítem no se encontró en el inventario")
+		return 0  # Devolver 0 si no se encontró el ítem
