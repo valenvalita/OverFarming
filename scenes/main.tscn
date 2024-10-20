@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://b5hufqs7sbm01"]
+[gd_scene load_steps=5 format=3 uid="uid://b5hufqs7sbm01"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_ysfbh"]
 [ext_resource type="PackedScene" uid="uid://bkvdcld6sp21y" path="res://scenes/player.tscn" id="2_p1kmq"]
 [ext_resource type="PackedScene" uid="uid://c2yul5p5mhlse" path="res://scenes/world.tscn" id="3_p3f7a"]
 [ext_resource type="PackedScene" uid="uid://m7pra0oohrmm" path="res://scenes/ui/pause_menu.tscn" id="4_1bgdh"]
-[ext_resource type="PackedScene" uid="uid://dqhpgknhdp1d3" path="res://farming_system/growing_zone.tscn" id="5_ey38r"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_ysfbh")
@@ -53,9 +52,5 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "1:30"
-
-[node name="growing_zone2" parent="." instance=ExtResource("5_ey38r")]
-position = Vector2(919, 396)
-scale = Vector2(2.5, 2.5)
 
 [connection signal="timeout" from="CanvasLayer/Timer" to="." method="_on_timer_timeout"]
