@@ -62,5 +62,6 @@ text = "Menú principal"
 layout_mode = 2
 text = "Salir"
 
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/NextLevel" to="." method="_on_next_level_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/MainMenu" to="." method="_on_main_menu_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/Salir" to="." method="_on_salir_pressed"]
