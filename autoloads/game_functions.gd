@@ -30,7 +30,13 @@ func _process(delta: float) -> void:
 			get_tree().paused = true
 			#get_tree().change_scene_to_file(derrota)
 		GameState.VICTORY:
-			print("¡Has ganado!")
+			pass
+			#print("¡Has ganado!")
 		GameState.PLAYING:
 			pass
 			#print("El juego está en progreso")
+
+@rpc("any_peer","call_local","reliable")
+func win_screen()-> void:
+	get_tree().change_scene_to_file("res://scenes/ui/win_screen.tscn")
+
