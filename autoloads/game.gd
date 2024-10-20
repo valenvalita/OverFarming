@@ -4,8 +4,8 @@ signal players_updated
 signal player_updated(id)
 signal player_index_received()
 
-# Emitted when UPnP port mapping setup is completed (regardless of success or failure).
-#signal upnp_completed(error)
+#Emitted when UPnP port mapping setup is completed (regardless of success or failure).
+signal upnp_completed(error)
 
 @export var multiplayer_test = false
 @export var test_players: Array[PlayerDataResource] = [] # first one is server

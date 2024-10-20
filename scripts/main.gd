@@ -6,8 +6,8 @@ extends Node2D
 @onready var time: Control = $CanvasLayer/Time
 var seconds = 0
 var minutes = 0
-var Dseconds = 200
-var Dminutes = 0
+var Dseconds = 30
+var Dminutes = 1
 
 var rng = RandomNumberGenerator.new()
 
@@ -46,4 +46,4 @@ func Reset_Timer():
 
 func generate_requests():	
 	if is_multiplayer_authority():
-		GameFunctions.n_delivery_carrots = rng.randi_range(1, 20)
+		GameFunctions.n_delivery_carrots = 5 #rng.randi_range(1, 20)

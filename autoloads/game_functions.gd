@@ -28,7 +28,7 @@ func update_delivery_server(cnt_items):
 	print(n_delivery_carrots)
 	if n_delivery_carrots==0:
 		print("HAS GANADO!")
-		
+		win_screen.rpc()
 	
 @warning_ignore("unused_parameter")
 func _process(delta: float) -> void:
@@ -47,6 +47,6 @@ func _process(delta: float) -> void:
 			pass
 			#print("El juego está en progreso")
 
-@rpc("any_peer","call_local","reliable")
-func win_screen()-> void:
-	get_tree().change_scene_to_file("res://scenes/ui/win_screen.tscn")
+#@rpc("any_peer","call_local","reliable")
+#func win_screen()-> void:
+#	get_tree().change_scene_to_file("res://scenes/ui/win_screen.tscn")

@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dintkw8q8305f"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_x8b1r"]
-[ext_resource type="Texture2D" uid="uid://chev7d16lrbfj" path="res://resources/Screenshot11-1920x1080-6eaa30c582dd6d4935e73dbadc1457d4.jpg" id="2_6ntks"]
+[ext_resource type="Texture2D" uid="uid://cclq4ifk30wx0" path="res://resources/Screenshot11-1920x1080-6eaa30c582dd6d4935e73dbadc1457d4_v2.jpg" id="2_fpja2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cxvin"]
 bg_color = Color(0.0627451, 0.0627451, 0.0627451, 1)
@@ -37,7 +37,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_6ntks")
+texture = ExtResource("2_fpja2")
 expand_mode = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
@@ -72,6 +72,18 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_rjoi3")
 text = "Salir"
+
+[node name="Tittle" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -56.0
+offset_top = 78.0
+offset_right = 59.03
+offset_bottom = 101.0
+grow_horizontal = 2
+text = "OVERFARMING"
 
 [connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
