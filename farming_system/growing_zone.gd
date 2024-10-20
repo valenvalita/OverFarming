@@ -10,7 +10,6 @@ enum SoilState
 }
 var current_state = SoilState.BARE_SOIL
 
-var plant = GameFunctions.plant_selected
 var plant_growing = false
 var plant_grown = false
 
@@ -24,12 +23,6 @@ func _ready() -> void:
 	soil_sprite.frame = 0 # Tierra sin nada
 	animated_plant.play("default")
 	
-@warning_ignore("unused_parameter")	
-func _physics_process(delta: float) -> void:
-	# Actualizar planta seleccionada 
-	if not plant_growing:
-		plant = GameFunctions.plant_selected
-
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.is_in_group("ToolEfect"):
 		# Se está usando una herramienta

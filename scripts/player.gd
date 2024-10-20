@@ -26,12 +26,9 @@ var selector_instance : Node2D
 const NUM_HOTBAR_SLOTS = 4
 var active_item_slot = 0
 
-var rng = RandomNumberGenerator.new()
-
 func _ready() -> void:
 	if is_multiplayer_authority():
 		camera_2d.make_current()  # Activa la cámara solo para el jugador local
-
 
 func _input(event: InputEvent) -> void:
 	if is_multiplayer_authority():
@@ -102,8 +99,6 @@ func setup(player_data: Statics.PlayerData) -> void:
 	label.text = player_data.name
 	player = player_data
 	hotbar.visible = is_multiplayer_authority()
-	requests.visible = is_multiplayer_authority()
-	requests.generate(GameFunctions.random_number)
 
 @rpc("authority", "call_local", "unreliable")
 func test():
