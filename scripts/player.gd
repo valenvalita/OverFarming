@@ -165,6 +165,21 @@ func remove_item(item):
 		var cnt_item = inv.remove_item(item)
 		return cnt_item
 
+func remove_item_cnt(item, cnt):
+	if is_multiplayer_authority():
+		print("Se quita item")
+		inv.remove_item_ctn(item, cnt)
+
+func has_seed():
+	if is_multiplayer_authority():
+		print("Se revisa inventario")
+		return inv.has_seed()
+		
+func get_seed():
+	if is_multiplayer_authority():
+		print("Se obtiene semilla")
+		return inv.get_seed()
+
 func active_item_scroll_up() -> void:
 	active_item_slot = (active_item_slot + 1) % NUM_HOTBAR_SLOTS
 	hotbar.hotbar_selector(active_item_slot)

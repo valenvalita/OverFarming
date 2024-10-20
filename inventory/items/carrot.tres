@@ -6,5 +6,6 @@
 [resource]
 script = ExtResource("1_sejw2")
 nam = "carrot"
+type = "plant"
 texture = ExtResource("2_o4wv7")
 max_items_per_slot = 5

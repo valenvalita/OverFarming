@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=4 format=3 uid="uid://c31bep6s58xfe"]
+
+[ext_resource type="Script" path="res://inventory/inventory_item.gd" id="1_k8wrs"]
+[ext_resource type="Resource" uid="uid://7e32vcjkn4xn" path="res://inventory/items/carrot.tres" id="1_w1lkq"]
+[ext_resource type="Texture2D" uid="uid://dqqp48uvc22l4" path="res://assets/Crops/carrot_seed.png" id="2_7ihkd"]
+
+[resource]
+script = ExtResource("1_k8wrs")
+nam = "carrot_seeds"
+type = "seed"
+texture = ExtResource("2_7ihkd")
+asociated_plant = ExtResource("1_w1lkq")
+max_items_per_slot = 5
