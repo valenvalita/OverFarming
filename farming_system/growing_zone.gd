@@ -82,8 +82,8 @@ func _sync_dig_soil(new_state):
 func plant_seed(player):
 	print("Se intenta sembrar")
 	if player_has_seed(player):
-		var seed = player.get_seed()
-		player.remove_item_cnt(seed, 1)
+		var seed_item = player.get_seed()
+		player.remove_item_cnt(seed_item, 1)
 		print("Semilla plantada")
 		
 		if is_multiplayer_authority():
