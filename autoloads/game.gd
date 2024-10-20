@@ -1,7 +1,7 @@
 extends Node
 
 signal players_updated
-#signal player_updated(id)
+signal player_updated(id)
 signal player_index_received()
 
 # Emitted when UPnP port mapping setup is completed (regardless of success or failure).

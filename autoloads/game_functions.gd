@@ -11,6 +11,10 @@ signal delivery_updated(new_count)
 		n_delivery_carrots = value
 		delivery_updated.emit(n_delivery_carrots)
 
+@rpc("any_peer","call_local","reliable")
+func win_screen()-> void:
+	get_tree().change_scene_to_file("res://scenes/ui/win_screen.tscn")
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass

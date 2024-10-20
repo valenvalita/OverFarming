@@ -17,11 +17,11 @@ func pause():
 func TestEsc():
 	if GameFunctions.can_pause:
 		if Input.is_action_just_pressed("esc") and !get_tree().paused:
-			pause()
-			rpc("pause")
+			pause.rpc()
+			#rpc("pause")
 		elif Input.is_action_just_pressed("esc") and get_tree().paused:
-			resume()
-			rpc("resume")
+			resume.rpc()
+			#rpc("resume")
 
 @warning_ignore("unused_parameter")
 func _process(delta):
