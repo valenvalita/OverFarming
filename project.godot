@@ -10,8 +10,8 @@ config_version=5
 
 [application]
 
-config/name="multiplayer_example"
-run/main_scene="res://scenes/ui/lobby.tscn"
+config/name="Overfarming"
+run/main_scene="res://scenes/ui/main_menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 

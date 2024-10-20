@@ -6,8 +6,8 @@ extends Node2D
 @onready var time: Control = $CanvasLayer/Time
 var seconds = 0
 var minutes = 0
-var Dseconds = 10
-var Dminutes = 0
+var Dseconds = 0
+var Dminutes = 3
 
 @rpc("any_peer","call_local","reliable")
 func lose_screen()-> void:

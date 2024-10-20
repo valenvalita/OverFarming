@@ -8,6 +8,10 @@ var can_pause = true
 signal delivery_updated(new_count)
 var n_delivery_carrots = 3
 
+@rpc("any_peer","call_local","reliable")
+func win_screen()-> void:
+	get_tree().change_scene_to_file("res://scenes/ui/win_screen.tscn")
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass
@@ -17,7 +21,8 @@ func update_delivery(cnt_items):
 	print(n_delivery_carrots)
 	emit_signal("delivery_updated", n_delivery_carrots)
 	if n_delivery_carrots==0:
-		print("HAS GANADO!")	
+		print("HAS GANADO!")
+		win_screen.rpc()
 		
 @warning_ignore("unused_parameter")
 func _process(delta: float) -> void:
@@ -35,8 +40,3 @@ func _process(delta: float) -> void:
 		GameState.PLAYING:
 			pass
 			#print("El juego está en progreso")
-
-@rpc("any_peer","call_local","reliable")
-func win_screen()-> void:
-	get_tree().change_scene_to_file("res://scenes/ui/win_screen.tscn")
-
