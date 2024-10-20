@@ -33,26 +33,25 @@ func _physics_process(delta: float) -> void:
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.is_in_group("ToolEfect"):
 		# Se está usando una herramienta
+		# Paso 1: Cavar
 		if area.get_parent().action_type == "digging" and current_state==SoilState.BARE_SOIL:
 			dig_soil()
-
+			
+		# Paso 2: Plantar
+		elif area.get_parent().action_type == "doing" and current_state==SoilState.DUG_SOIL and not plant_growing:
+			var player = area.get_parent().player_actual
+			plant_seed(player)
+		# Paso 3: Regar
 		elif area.get_parent().action_type == "watering" and current_state==SoilState.SEEDED_SOIL:
 			water_soil()
 			start_growing_plant.start()
 			
+		# Paso 3: Recolectar	
 		elif area.get_parent().action_type == "doing" and current_state==SoilState.FULLY_GROWN_PLANT:
 			var player = area.get_parent().player_actual
 			player.collect(item)
 			pick_plant()
 			
-	if not plant_growing:
-		if area.is_in_group("Plant") and current_state == SoilState.DUG_SOIL:
-			plant_seed()
-		else:
-			print("No puede plantar aquí en este estado.")
-	else:
-		print("La planta ya está creciendo aquí.")
-
 ###### LÓGICA DE ESTADOS AL PLANTAR ######
 
 ## LÓGICA PARA CAVAR TIERRA ##
@@ -80,13 +79,23 @@ func _sync_dig_soil(new_state):
 	soil_sprite.frame = 1
 	
 ## LÓGICA PARA PLANTAR SEMILLAS ##
-func plant_seed():
-	print("Se siembra")
-	if is_multiplayer_authority():
-		rpc_id(0, "_server_plant_seed")
-	else:
-		rpc("_request_plant_seed")	
+func plant_seed(player):
+	print("Se intenta sembrar")
+	if player_has_seed(player):
+		var seed = player.get_seed()
+		player.remove_item_cnt(seed, 1)
+		print("Semilla plantada")
 		
+		if is_multiplayer_authority():
+			rpc_id(0, "_server_plant_seed")
+		else:
+			rpc("_request_plant_seed")	
+	else:
+		print("Jugador no tiene semillas")
+		
+func player_has_seed(player):
+	return player.has_seed()		
+	
 @rpc("any_peer")  # Permitir que cualquier cliente llame a esta función
 func _request_plant_seed():
 	# Esta función es llamada por el cliente y la ejecuta el servidor
