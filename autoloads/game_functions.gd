@@ -14,7 +14,7 @@ var rng = RandomNumberGenerator.new()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	random_number = 10
+	random_number = 1
 	#random_number = randi_range(1,20)
 	pass
 
@@ -23,23 +23,30 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	match current_state:
 		GameState.PAUSE:
-			print("El juego está en pausa")
+			pass
+			#print("El juego está en pausa")
 		GameState.DEFEAT:
 			can_pause = false
 			get_tree().paused = true
 			#get_tree().change_scene_to_file(derrota)
 		GameState.VICTORY:
-			print("¡Has ganado!")
+			pass
+			#print("¡Has ganado!")
 		GameState.PLAYING:
 			pass
 			#print("El juego está en progreso")
 	pass
 
+@rpc("any_peer","call_local","reliable")
+func win_screen()-> void:
+	get_tree().change_scene_to_file("res://scenes/ui/win_screen.tscn")
+
 func update_delivery(cnt_items):
 	n_delivery_carrots = max(n_delivery_carrots - cnt_items, 0)
 	print(n_delivery_carrots)
-	if n_delivery_carrots==0:
+	if n_delivery_carrots==0 or (Input.is_action_just_pressed("L") and GameFunctions.current_state == GameState.PLAYING) :
 		print("HAS GANADO!")
+		win_screen()
 	
 func generate_requests():
 	print("Número generado en GameFunctions: ", random_number)

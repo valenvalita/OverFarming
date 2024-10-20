@@ -6,8 +6,16 @@ extends Node2D
 @onready var time: Control = $CanvasLayer/Time
 var seconds = 0
 var minutes = 0
-var Dseconds = 200
+var Dseconds = 10
 var Dminutes = 0
+
+@rpc("any_peer","call_local","reliable")
+func lose_screen()-> void:
+	get_tree().change_scene_to_file("res://scenes/ui/lose_screen.tscn")
+	
+@rpc("any_peer","call_local","reliable")
+func win_screen()-> void:
+	get_tree().change_scene_to_file("res://scenes/ui/win_screen.tscn")
 
 func _ready() -> void:
 	Reset_Timer()
@@ -17,8 +25,10 @@ func _ready() -> void:
 		players.add_child(player_inst)
 		player_inst.setup(player_data)
 		player_inst.global_position = markers.get_child(i).global_position
-		
-		
+	
+	if Input.is_action_just_pressed("L") :
+		#print("HAS GANADO!")
+		win_screen()
 
 func _on_timer_timeout() -> void:
 	if seconds == 0 and minutes > 0:
@@ -26,7 +36,7 @@ func _on_timer_timeout() -> void:
 		seconds = 60
 	elif seconds == 0 and minutes == 0:
 		GameFunctions.current_state = GameFunctions.GameState.DEFEAT
-		get_tree().change_scene_to_file("res://scenes/ui/lose_screen.tscn")
+		lose_screen()
 		return
 	seconds -=1
 	time.text = str(minutes) + ":" + str(seconds)

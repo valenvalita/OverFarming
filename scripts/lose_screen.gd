@@ -11,7 +11,6 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	get_tree().paused = false
 
-
 func _on_main_menu_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/ui/main_menu.tscn")
 
