@@ -19,7 +19,7 @@ config/icon="res://icon.svg"
 
 Debug="*res://autoloads/debug.gd"
 Game="*res://autoloads/game.tscn"
-GameFunctions="*res://autoloads/game_functions.gd"
+GameFunctions="*res://autoloads/game_functions.tscn"
 
 [global_group]
 
