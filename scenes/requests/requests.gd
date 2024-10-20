@@ -1,7 +1,10 @@
 extends Control
-var requests = 0
+
 @onready var panel1_label = $NinePatchRect/GridContainer/Contador/Label
 
-
-func generate(number : int) -> void:
-	panel1_label.text = str(number)
+func _ready() -> void:
+	#connect("delivery_updated", update_contador)
+	panel1_label.text = str(GameFunctions.n_delivery_carrots)
+	
+func update_contador():
+	panel1_label.text = str(GameFunctions.n_delivery_carrots)

@@ -10,6 +10,7 @@ var Dseconds = 200
 var Dminutes = 0
 
 func _ready() -> void:
+	#generate_requests()
 	Reset_Timer()
 	for i in Game.players.size():
 		var player_data = Game.players[i]
@@ -18,8 +19,6 @@ func _ready() -> void:
 		player_inst.setup(player_data)
 		player_inst.global_position = markers.get_child(i).global_position
 		
-		
-
 func _on_timer_timeout() -> void:
 	if seconds == 0 and minutes > 0:
 		minutes -= 1
@@ -34,3 +33,23 @@ func _on_timer_timeout() -> void:
 func Reset_Timer():
 	seconds = Dseconds
 	minutes = Dminutes
+
+'''
+func generate_requests():	
+	if is_multiplayer_authority():
+		print("Es autoridad, llamando al servidor para generar número")
+		rpc_id(0, "_server_random_number")
+	else:
+		print("No es autoridad, no puede generar número")
+
+@rpc("authority")		
+func _server_random_number():
+	random_number = rng.randi_range(1, 20)
+	print("Server ha generado random number", random_number)
+	rpc("_sync_random_number", random_number)
+	
+@rpc("any_peer")
+func _sync_random_number(new_random_number):
+	random_number = new_random_number
+	print("Número sincronizado en el cliente: ", random_number)
+'''	

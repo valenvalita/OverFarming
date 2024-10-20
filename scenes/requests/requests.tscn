@@ -38,7 +38,6 @@ layout_mode = 2
 script = ExtResource("3_tdwe2")
 
 [node name="Sprite2D" type="Sprite2D" parent="NinePatchRect/GridContainer/Crop"]
-visible = false
 texture_filter = 1
 position = Vector2(15, 15)
 texture = ExtResource("4_ifva1")
