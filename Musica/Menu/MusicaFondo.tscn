@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Resources/0_Menu_Theme.wav" type="AudioStream" id=1]
+[ext_resource path="res://Scenes/Musica/Menu/MusicaFondo.gd" type="Script" id=2]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource( 1 )
+volume_db = -35.0
+script = ExtResource( 2 )
