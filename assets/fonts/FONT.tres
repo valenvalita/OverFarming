@@ -1,0 +1,9 @@
+[gd_resource type="DynamicFont" load_steps=2 format=2]
+
+[ext_resource path="res://Assets/UI/Menu/Kenney Pixel.ttf" type="DynamicFontData" id=1]
+
+[resource]
+size = 55
+outline_size = 2
+outline_color = Color( 0.184314, 0.172549, 0.172549, 1 )
+font_data = ExtResource( 1 )
