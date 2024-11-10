@@ -1,15 +1,15 @@
-[gd_scene load_steps=7 format=3 uid="uid://b5hufqs7sbm01"]
+[gd_scene load_steps=7 format=3 uid="uid://dkc7yiqh0lb5n"]
 
-[ext_resource type="Script" path="res://scripts/main.gd" id="1_ysfbh"]
-[ext_resource type="PackedScene" uid="uid://bkvdcld6sp21y" path="res://scenes/player.tscn" id="2_p1kmq"]
-[ext_resource type="PackedScene" uid="uid://c2yul5p5mhlse" path="res://scenes/world.tscn" id="3_p3f7a"]
-[ext_resource type="PackedScene" uid="uid://m7pra0oohrmm" path="res://scenes/ui/pause_menu.tscn" id="4_1bgdh"]
-[ext_resource type="PackedScene" uid="uid://bmf6aj2usll38" path="res://scenes/requests/requests.tscn" id="5_isuke"]
-[ext_resource type="AudioStream" uid="uid://bukdqn77co1gl" path="res://Musica/1_Level_Theme.wav" id="6_d1pb8"]
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_uuprj"]
+[ext_resource type="PackedScene" uid="uid://bkvdcld6sp21y" path="res://scenes/player.tscn" id="2_yae5n"]
+[ext_resource type="PackedScene" uid="uid://c2yul5p5mhlse" path="res://scenes/world.tscn" id="3_72lj0"]
+[ext_resource type="PackedScene" uid="uid://m7pra0oohrmm" path="res://scenes/ui/pause_menu.tscn" id="4_bm3pu"]
+[ext_resource type="PackedScene" uid="uid://bmf6aj2usll38" path="res://scenes/requests/requests.tscn" id="5_x738a"]
+[ext_resource type="AudioStream" uid="uid://bukdqn77co1gl" path="res://Musica/1_Level_Theme.wav" id="6_elamt"]
 
 [node name="Main" type="Node2D"]
-script = ExtResource("1_ysfbh")
-player_scene = ExtResource("2_p1kmq")
+script = ExtResource("1_uuprj")
+player_scene = ExtResource("2_yae5n")
 
 [node name="Players" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -19,7 +19,7 @@ scale = Vector2(1.4, 1.4)
 y_sort_enabled = true
 scale = Vector2(2.1, 2.1)
 
-[node name="World" parent="Players/Background" instance=ExtResource("3_p3f7a")]
+[node name="World" parent="Players/Background" instance=ExtResource("3_72lj0")]
 
 [node name="Markers" type="Node2D" parent="."]
 
@@ -36,7 +36,7 @@ position = Vector2(1076, 195)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("4_1bgdh")]
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("4_bm3pu")]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -55,7 +55,7 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "1:30"
 
-[node name="Requests" parent="CanvasLayer" instance=ExtResource("5_isuke")]
+[node name="Requests" parent="CanvasLayer" instance=ExtResource("5_x738a")]
 visible = false
 anchors_preset = -1
 anchor_left = 1.0
@@ -67,7 +67,7 @@ offset_bottom = 1.0
 scale = Vector2(1.5, 1.5)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_d1pb8")
+stream = ExtResource("6_elamt")
 volume_db = -40.0
 autoplay = true
 
