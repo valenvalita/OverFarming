@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://c2yul5p5mhlse" path="res://scenes/world.tscn" id="3_p3f7a"]
 [ext_resource type="PackedScene" uid="uid://m7pra0oohrmm" path="res://scenes/ui/pause_menu.tscn" id="4_1bgdh"]
 [ext_resource type="PackedScene" uid="uid://bmf6aj2usll38" path="res://scenes/requests/requests.tscn" id="5_isuke"]
-[ext_resource type="AudioStream" uid="uid://bukdqn77co1gl" path="res://Musica/1_Level_Theme.wav" id="6_d1pb8"]
+[ext_resource type="AudioStream" uid="uid://f7l8vjfpigfu" path="res://Musica/1_Level_Theme.wav" id="6_d1pb8"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_ysfbh")

@@ -22,6 +22,7 @@ func win_screen()-> void:
 func _ready() -> void:
 	generate_requests()
 	Reset_Timer()
+	#Game.players.sort()
 	for i in Game.players.size():
 		var player_data = Game.players[i]
 		var player_inst = player_scene.instantiate()

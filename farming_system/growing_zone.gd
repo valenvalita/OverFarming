@@ -49,24 +49,14 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 
 ## LÓGICA PARA CAVAR TIERRA ##
 func dig_soil():
-	print("Se cava hoyo")
-	if is_multiplayer_authority():
-		rpc_id(0, "_server_dig_soil")
-	else:
-		rpc("_request_dig_soil")
+	Debug.log("Se cava hoyo")
+	_server_dig_soil.rpc_id(1)
 
-@rpc("any_peer")
-func _request_dig_soil():
-	if is_multiplayer_authority():
-		_server_dig_soil()
-
-@rpc("authority")
+@rpc("any_peer","call_local","reliable")
 func _server_dig_soil():
-	current_state = SoilState.DUG_SOIL
-	soil_sprite.frame = 1
-	rpc("_sync_dig_soil", current_state)
+	_sync_dig_soil.rpc(SoilState.DUG_SOIL) 
 
-@rpc("any_peer")
+@rpc("any_peer","call_local","reliable")
 func _sync_dig_soil(new_state):
 	current_state = new_state
 	soil_sprite.frame = 1

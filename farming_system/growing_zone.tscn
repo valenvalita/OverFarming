@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://4qctmer2mvcd" path="res://assets/Crops/soil_01.png" id="3_2xa08"]
 [ext_resource type="Texture2D" uid="uid://bvqcstk1m67pt" path="res://assets/Crops/soil_04.png" id="3_eamal"]
 [ext_resource type="Texture2D" uid="uid://cb0rd7ui0soxx" path="res://assets/Crops/carrot_01.png" id="3_lb7wh"]
-[ext_resource type="Texture2D" uid="uid://qyrmij8le737" path="res://assets/Crops/soil_02.png" id="4_e868g"]
+[ext_resource type="Texture2D" uid="uid://bmbps205v4oac" path="res://assets/Crops/soil_02.png" id="4_e868g"]
 [ext_resource type="Texture2D" uid="uid://cl247rwc10tw0" path="res://assets/Crops/carrot_02.png" id="4_fuydl"]
 [ext_resource type="Texture2D" uid="uid://bo2rs0cuar10h" path="res://assets/Crops/carrot_03.png" id="5_i58ua"]
 [ext_resource type="Texture2D" uid="uid://bsms4nkbbwjbb" path="res://assets/Crops/carrot_04.png" id="6_ol02o"]
