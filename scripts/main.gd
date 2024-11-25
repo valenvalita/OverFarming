@@ -20,6 +20,7 @@ func win_screen()-> void:
 	get_tree().change_scene_to_file("res://scenes/ui/win_screen.tscn")
 
 func _ready() -> void:
+	MenuMusic.play_music_level(1)
 	generate_requests()
 	Reset_Timer()
 	#Game.players.sort()

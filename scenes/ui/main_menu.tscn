@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://dintkw8q8305f"]
+[gd_scene load_steps=6 format=3 uid="uid://dintkw8q8305f"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_x8b1r"]
 [ext_resource type="Texture2D" uid="uid://cclq4ifk30wx0" path="res://resources/Screenshot11-1920x1080-6eaa30c582dd6d4935e73dbadc1457d4_v2.jpg" id="2_fpja2"]
-[ext_resource type="AudioStream" uid="uid://bobliprs23r7h" path="res://Musica/0_Menu_Theme.wav" id="3_ngynn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cxvin"]
 bg_color = Color(0.0627451, 0.0627451, 0.0627451, 1)
@@ -73,11 +72,6 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_rjoi3")
 text = "Salir"
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_ngynn")
-volume_db = -35.0
-autoplay = true
 
 [connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
