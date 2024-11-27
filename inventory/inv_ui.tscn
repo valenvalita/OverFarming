@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bx6qi23y6hcqh"]
+[gd_scene load_steps=5 format=3 uid="uid://bx6qi23y6hcqh"]
 
 [ext_resource type="Script" path="res://inventory/inv_ui.gd" id="1_r200f"]
 [ext_resource type="Texture2D" uid="uid://bg81oe1dyxx8a" path="res://assets/ui/inventory-background.png" id="2_0cb14"]
 [ext_resource type="PackedScene" uid="uid://djjnc1a7nclwd" path="res://inventory/inv_ui_slot.tscn" id="3_l15q5"]
+[ext_resource type="PackedScene" uid="uid://dqc3rxvwa7ea" path="res://scenes/hotbar/selector.tscn" id="4_klchl"]
 
 [node name="Inv_UI" type="Control"]
 custom_minimum_size = Vector2(44, 44)
@@ -18,8 +19,8 @@ script = ExtResource("1_r200f")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 layout_mode = 0
-offset_right = 44.0
-offset_bottom = 42.0
+offset_right = 42.0
+offset_bottom = 84.0
 texture = ExtResource("2_0cb14")
 patch_margin_left = 6
 patch_margin_top = 6
@@ -44,11 +45,47 @@ columns = 2
 [node name="inv_UI_slot1" parent="NinePatchRect/GridContainer" instance=ExtResource("3_l15q5")]
 layout_mode = 2
 
+[node name="Selector" parent="NinePatchRect/GridContainer/inv_UI_slot1" instance=ExtResource("4_klchl")]
+position = Vector2(8, 8)
+
 [node name="inv_UI_slot2" parent="NinePatchRect/GridContainer" instance=ExtResource("3_l15q5")]
 layout_mode = 2
+
+[node name="Selector" parent="NinePatchRect/GridContainer/inv_UI_slot2" instance=ExtResource("4_klchl")]
+position = Vector2(8, 8)
 
 [node name="inv_UI_slot3" parent="NinePatchRect/GridContainer" instance=ExtResource("3_l15q5")]
 layout_mode = 2
 
+[node name="Selector" parent="NinePatchRect/GridContainer/inv_UI_slot3" instance=ExtResource("4_klchl")]
+position = Vector2(8, 8)
+
 [node name="inv_UI_slot4" parent="NinePatchRect/GridContainer" instance=ExtResource("3_l15q5")]
 layout_mode = 2
+
+[node name="Selector" parent="NinePatchRect/GridContainer/inv_UI_slot4" instance=ExtResource("4_klchl")]
+position = Vector2(8, 8)
+
+[node name="inv_UI_slot5" parent="NinePatchRect/GridContainer" instance=ExtResource("3_l15q5")]
+layout_mode = 2
+
+[node name="Selector" parent="NinePatchRect/GridContainer/inv_UI_slot5" instance=ExtResource("4_klchl")]
+position = Vector2(8, 8)
+
+[node name="inv_UI_slot6" parent="NinePatchRect/GridContainer" instance=ExtResource("3_l15q5")]
+layout_mode = 2
+
+[node name="Selector" parent="NinePatchRect/GridContainer/inv_UI_slot6" instance=ExtResource("4_klchl")]
+position = Vector2(8, 8)
+
+[node name="inv_UI_slot7" parent="NinePatchRect/GridContainer" instance=ExtResource("3_l15q5")]
+layout_mode = 2
+
+[node name="Selector" parent="NinePatchRect/GridContainer/inv_UI_slot7" instance=ExtResource("4_klchl")]
+position = Vector2(8, 8)
+
+[node name="inv_UI_slot8" parent="NinePatchRect/GridContainer" instance=ExtResource("3_l15q5")]
+layout_mode = 2
+
+[node name="Selector" parent="NinePatchRect/GridContainer/inv_UI_slot8" instance=ExtResource("4_klchl")]
+position = Vector2(8, 8)

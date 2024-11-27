@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=4 format=3 uid="uid://domtq5thu0jga"]
+
+[ext_resource type="Script" path="res://inventory/inventory_item.gd" id="1_kgvmv"]
+[ext_resource type="Resource" uid="uid://djlgwb7gwiwin" path="res://inventory/items/beetroot.tres" id="1_xfds3"]
+[ext_resource type="Texture2D" uid="uid://ctanh4cycvona" path="res://assets/Crops/beetroot_00.png" id="3_x5qph"]
+
+[resource]
+script = ExtResource("1_kgvmv")
+nam = "beetroot_seed"
+type = "seed"
+texture = ExtResource("3_x5qph")
+asociated_plant = ExtResource("1_xfds3")
+max_items_per_slot = 5

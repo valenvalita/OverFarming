@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://bppk4mdcvvpjb"]
+
+[ext_resource type="Script" path="res://inventory/inventory_item.gd" id="1_n71ho"]
+[ext_resource type="Texture2D" uid="uid://bgv2qboiryy8s" path="res://assets/Crops/pumpkin_05.png" id="2_t3pfc"]
+
+[resource]
+script = ExtResource("1_n71ho")
+nam = "pumpkin"
+type = "plant"
+texture = ExtResource("2_t3pfc")
+max_items_per_slot = 5

@@ -4,6 +4,13 @@ enum GameState { PAUSE, DEFEAT, VICTORY, PLAYING }
 
 var current_state = GameState.PLAYING
 var can_pause = true
+var rng = RandomNumberGenerator.new()
+
+signal element_updated(element)
+@export var element_index = rng.randi_range(0,3):
+	set(val):
+		element_index = val
+		element_updated.emit(element_index)
 
 signal delivery_updated(new_count)
 @export var n_delivery_carrots = 3:

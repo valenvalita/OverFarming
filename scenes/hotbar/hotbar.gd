@@ -26,3 +26,7 @@ func hotbar_selector(index : int) -> void:
 	for i in range(selectores.size()):
 		selectores[i].visible = false
 	selectores[index].visible = true
+
+func hotbar_numbers(actual_index : int, next_index : int) -> void:
+	selectores[actual_index].visible = false
+	selectores[next_index - 1].visible = true

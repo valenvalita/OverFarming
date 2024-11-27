@@ -1,9 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://bmf6aj2usll38"]
+[gd_scene load_steps=8 format=3 uid="uid://bmf6aj2usll38"]
 
 [ext_resource type="Script" path="res://scenes/requests/requests.gd" id="1_1nlre"]
 [ext_resource type="Texture2D" uid="uid://bg81oe1dyxx8a" path="res://assets/ui/inventory-background.png" id="2_u2c0w"]
 [ext_resource type="Script" path="res://scenes/requests/crop.gd" id="3_tdwe2"]
 [ext_resource type="Texture2D" uid="uid://cyghnglqxsemv" path="res://assets/Crops/carrot_05.png" id="4_ifva1"]
+[ext_resource type="Texture2D" uid="uid://cwi1uu2gqpopt" path="res://assets/Crops/beetroot_05.png" id="5_alh3o"]
+[ext_resource type="Texture2D" uid="uid://dckqxn8dped53" path="res://assets/Crops/potato_05.png" id="6_feb4u"]
+[ext_resource type="Texture2D" uid="uid://bgv2qboiryy8s" path="res://assets/Crops/pumpkin_05.png" id="7_yccal"]
 
 [node name="Requests" type="Control"]
 layout_mode = 3
@@ -38,9 +41,30 @@ layout_mode = 2
 script = ExtResource("3_tdwe2")
 
 [node name="Sprite2D" type="Sprite2D" parent="NinePatchRect/GridContainer/Crop"]
+visible = false
 texture_filter = 1
 position = Vector2(15, 15)
 texture = ExtResource("4_ifva1")
+
+[node name="Sprite2D2" type="Sprite2D" parent="NinePatchRect/GridContainer/Crop"]
+visible = false
+texture_filter = 1
+position = Vector2(15, 14)
+texture = ExtResource("5_alh3o")
+
+[node name="Sprite2D3" type="Sprite2D" parent="NinePatchRect/GridContainer/Crop"]
+visible = false
+texture_filter = 1
+position = Vector2(15, 15)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("6_feb4u")
+
+[node name="Sprite2D4" type="Sprite2D" parent="NinePatchRect/GridContainer/Crop"]
+visible = false
+texture_filter = 1
+position = Vector2(15, 15)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("7_yccal")
 
 [node name="Contador" type="Panel" parent="NinePatchRect/GridContainer"]
 custom_minimum_size = Vector2(30, 30)

@@ -12,6 +12,7 @@ var player
 @onready var camera_2d: Camera2D = %Camera2D
 
 @onready var hotbar: Control = $HotbarInterface/Hotbar
+@onready var inv_ui = $HotbarInterface/Inv_UI
 @onready var requests : Control = $HotbarInterface/Requests
 @onready var requests_label = $HotbarInterface/Requests/NinePatchRect/GridContainer/Contador/Label
 
@@ -25,6 +26,7 @@ var carry_instance : Node2D
 var selector_instance : Node2D
 const NUM_HOTBAR_SLOTS = 4
 var active_item_slot = 0
+var inv_active_item_slot = 0
 
 func _ready() -> void:
 	if is_multiplayer_authority():
@@ -57,6 +59,22 @@ func _input(event: InputEvent) -> void:
 				active_item_scroll_down()
 			if event.is_action_pressed("Scroll_Up"):
 				active_item_scroll_up()
+			if event.is_action_pressed("Inv_Up"):
+				inv_active_item_scroll_down()
+			if event.is_action_pressed("Inv_Down"):
+				inv_active_item_scroll_up()
+			if event.is_action_pressed("Hotbar1"):
+				hotbar.hotbar_numbers(active_item_slot, 1)
+				active_item_slot = 0
+			if event.is_action_pressed("Hotbar2"):
+				hotbar.hotbar_numbers(active_item_slot, 2)
+				active_item_slot = 1
+			if event.is_action_pressed("Hotbar3"):
+				hotbar.hotbar_numbers(active_item_slot, 3)
+				active_item_slot = 2
+			if event.is_action_pressed("Hotbar4"):
+				hotbar.hotbar_numbers(active_item_slot, 4)
+				active_item_slot = 3
 						
 @warning_ignore("unused_parameter")
 func _physics_process(delta: float) -> void:
@@ -168,12 +186,12 @@ func remove_item_cnt(item, cnt):
 func has_seed():
 	if is_multiplayer_authority():
 		print("Se revisa inventario")
-		return inv.has_seed()
+		return inv.has_seed(inv_active_item_slot)
 		
 func get_seed():
 	if is_multiplayer_authority():
 		print("Se obtiene semilla")
-		return inv.get_seed()
+		return inv.get_seed(inv_active_item_slot)
 
 func active_item_scroll_up() -> void:
 	active_item_slot = (active_item_slot + 1) % NUM_HOTBAR_SLOTS
@@ -185,3 +203,30 @@ func active_item_scroll_down() -> void:
 	else:
 		active_item_slot -= 1
 	hotbar.hotbar_selector(active_item_slot)
+	
+func inv_active_item_scroll_up() -> void:
+	print("Actual_items: ", inv.actual_items)
+	print("INV_UP")
+	inv_active_item_slot = (inv_active_item_slot + 1) % 8
+	inv_ui.inv_selector(inv_active_item_slot)
+	if inv.slots[inv_active_item_slot].item != null:
+		print(inv.slots[inv_active_item_slot].item.nam)
+	else :
+		print("vacío")
+		
+	
+
+func inv_active_item_scroll_down() -> void:
+	print("Actual_items: ", inv.actual_items)
+	print("INV_DOWN")
+	if inv_active_item_slot == 0:
+		inv_active_item_slot = 8 - 1
+	else:
+		inv_active_item_slot -= 1
+	inv_ui.inv_selector(inv_active_item_slot)
+	if inv.slots[inv_active_item_slot].item != null:
+		print(inv.slots[inv_active_item_slot].item.nam)
+	else :
+		print("vacío")
+			
+	
