@@ -68,3 +68,19 @@ func get_seed(index : int):
 		var seed_item = slots[index].item
 		return seed_item
 	return null
+	
+func check_inv(num : int):
+	for slot in slots:
+		if  num == 0:
+			if slot.item.nam == "carrot":
+				return slot.item
+		elif num == 1:
+			if slot.item.nam == "beetroot":
+				return slot.item
+		elif num == 2:
+			if slot.item.nam == "potato":
+				return slot.item
+		elif num == 3:
+			if slot.item.nam == "pumpkin":
+				return slot.item
+	return null

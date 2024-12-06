@@ -183,6 +183,10 @@ func remove_item_cnt(item, cnt):
 		print("Se quita item")
 		inv.remove_item_ctn(item, cnt)
 
+func check_inv(num : int):
+	if is_multiplayer_authority():
+		return inv.check_inv(num)
+
 func has_seed():
 	if is_multiplayer_authority():
 		print("Se revisa inventario")
