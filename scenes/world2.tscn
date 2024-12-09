@@ -2746,10 +2746,10 @@ position = Vector2(658, 340)
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 16.0
-offset_top = 120.0
-offset_right = 59.0
-offset_bottom = 132.0
+offset_left = 377.0
+offset_top = 145.0
+offset_right = 420.0
+offset_bottom = 157.0
 
 [node name="ColorRect" type="ColorRect" parent="Control"]
 layout_mode = 1
@@ -2773,10 +2773,10 @@ text = "E: Acción"
 [node name="Control2" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 103.0
-offset_top = 163.0
-offset_right = 256.0
-offset_bottom = 177.0
+offset_left = 232.0
+offset_top = 182.0
+offset_right = 385.0
+offset_bottom = 196.0
 
 [node name="ColorRect" type="ColorRect" parent="Control2"]
 layout_mode = 1
@@ -2797,15 +2797,15 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("7_fe568")
 text = " Rueda del ratón: Elegir acción"
 
-[node name="Control3" type="Control" parent="Control2"]
+[node name="Control3" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_left = -87.0
-offset_top = -43.0
-offset_right = -42.0
-offset_bottom = -31.0
+offset_left = 112.0
+offset_top = 294.0
+offset_right = 176.0
+offset_bottom = 306.0
 
-[node name="ColorRect" type="ColorRect" parent="Control2/Control3"]
+[node name="ColorRect" type="ColorRect" parent="Control3"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -2814,7 +2814,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0.395653, 0.000870108, 1)
 
-[node name="Label" type="Label" parent="Control2/Control3"]
+[node name="Label" type="Label" parent="Control3"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -2822,7 +2822,310 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("7_fe568")
-text = " E: Acción"
+text = " I: Inventario"
+
+[node name="Control14" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 190.0
+offset_top = 481.0
+offset_right = 269.0
+offset_bottom = 511.0
+
+[node name="ColorRect" type="ColorRect" parent="Control14"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.395653, 0.000870108, 1)
+
+[node name="Label" type="Label" parent="Control14"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("7_fe568")
+text = " MÁX. 5 Semillas 
+ iguales"
+
+[node name="Control4" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 156.0
+offset_top = 313.0
+offset_right = 252.0
+offset_bottom = 325.0
+
+[node name="ColorRect" type="ColorRect" parent="Control4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.395653, 0.000870108, 1)
+
+[node name="Label" type="Label" parent="Control4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("7_fe568")
+text = " G: Recoger semilla"
+
+[node name="Control13" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -2.0
+offset_top = 482.0
+offset_right = 186.0
+offset_bottom = 511.0
+
+[node name="ColorRect" type="ColorRect" parent="Control13"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.395653, 0.000870108, 1)
+
+[node name="Label" type="Label" parent="Control13"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("7_fe568")
+text = " Ahora vuelve a la zona de plantación
+ para continuar"
+
+[node name="Control5" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 546.0
+offset_top = 372.0
+offset_right = 700.0
+offset_bottom = 401.0
+
+[node name="ColorRect" type="ColorRect" parent="Control5"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.395653, 0.000870108, 1)
+
+[node name="Label" type="Label" parent="Control5"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("7_fe568")
+text = " Para entregar el pedido, 
+ pasar por delante del edificio. "
+
+[node name="Control6" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 537.0
+offset_top = 29.0
+offset_right = 722.0
+offset_bottom = 44.0
+
+[node name="ColorRect" type="ColorRect" parent="Control6"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.395653, 0.000870108, 1)
+
+[node name="Label" type="Label" parent="Control6"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("7_fe568")
+text = " Pasar por el puente para progresar"
+
+[node name="Control12" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 559.0
+offset_top = 11.0
+offset_right = 706.0
+offset_bottom = 25.0
+
+[node name="ColorRect" type="ColorRect" parent="Control12"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.395653, 0.000870108, 1)
+
+[node name="Label" type="Label" parent="Control12"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("7_fe568")
+text = " ¡BIENVENIDOS a OVERFARMING!"
+
+[node name="Control7" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 108.0
+offset_top = 162.0
+offset_right = 206.0
+offset_bottom = 192.0
+
+[node name="ColorRect" type="ColorRect" parent="Control7"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.395653, 0.000870108, 1)
+
+[node name="Label" type="Label" parent="Control7"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("7_fe568")
+text = " ¡Bajar por el puente
+ para continuar!"
+
+[node name="Control11" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 145.0
+offset_top = -4.0
+offset_right = 302.0
+offset_bottom = 42.0
+
+[node name="ColorRect" type="ColorRect" parent="Control11"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.395653, 0.000870108, 1)
+
+[node name="Label" type="Label" parent="Control11"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("7_fe568")
+text = " Para plantar: excavar el hoyo, 
+ luego plantar, luego regar y 
+ por último cosechar"
+
+[node name="Control8" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 587.0
+offset_top = 163.0
+offset_right = 705.0
+offset_bottom = 178.0
+
+[node name="ColorRect" type="ColorRect" parent="Control8"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.395653, 0.000870108, 1)
+
+[node name="Label" type="Label" parent="Control8"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("7_fe568")
+text = " W, A , S ,D : Para moverse"
+
+[node name="Control9" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 259.0
+offset_top = 384.0
+offset_right = 394.0
+offset_bottom = 397.0
+
+[node name="ColorRect" type="ColorRect" parent="Control9"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.395653, 0.000870108, 1)
+
+[node name="Label" type="Label" parent="Control9"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("7_fe568")
+text = " Baja para buscar semillas"
+
+[node name="Control10" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 241.0
+offset_top = 291.0
+offset_right = 445.0
+offset_bottom = 307.0
+
+[node name="ColorRect" type="ColorRect" parent="Control10"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.395653, 0.000870108, 1)
+
+[node name="Label" type="Label" parent="Control10"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("7_fe568")
+text = " A la derecha para entregar los pedidos"
 
 [connection signal="body_entered" from="Farm/Well/Area2D" to="Farm/Well/Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Farm/Well/Area2D" to="Farm/Well/Area2D" method="_on_body_exited"]
