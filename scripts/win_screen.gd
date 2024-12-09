@@ -12,6 +12,11 @@ func _process(delta: float) -> void:
 
 @rpc("any_peer","call_local","reliable")
 func main_menu()-> void:
+#if NetworkedMultiplayerENet:
+	var network_peer = get_tree().get_network_peer()
+	if network_peer:
+		network_peer.close_connection()  # Cierra conexiones activas
+		get_tree().set_network_peer(null)  # Limpia el peer
 	get_tree().change_scene_to_file("res://scenes/ui/main_menu.tscn")
 	
 

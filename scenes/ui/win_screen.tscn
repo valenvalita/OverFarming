@@ -1,10 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://r7gp00kpnadw"]
+[gd_scene load_steps=7 format=3 uid="uid://r7gp00kpnadw"]
 
 [ext_resource type="Script" path="res://scripts/win_screen.gd" id="1_umbjs"]
 [ext_resource type="Texture2D" uid="uid://cclq4ifk30wx0" path="res://resources/Screenshot11-1920x1080-6eaa30c582dd6d4935e73dbadc1457d4_v2.jpg" id="2_dfop6"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_yf5nx"]
 font_size = 40
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cos7s"]
+bg_color = Color(0.0627451, 0.0627451, 0.0627451, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g6l17"]
+bg_color = Color(0.0627451, 0.0627451, 0.0627451, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q50vp"]
+bg_color = Color(0.0627451, 0.0627451, 0.0627451, 1)
 
 [node name="WinScreen" type="Control"]
 layout_mode = 3
@@ -62,16 +71,19 @@ theme_override_constants/separation = 150
 
 [node name="NextLevel" type="Button" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
-text = "Siguiente nivel"
+theme_override_styles/normal = SubResource("StyleBoxFlat_cos7s")
+text = " Siguiente nivel "
 
 [node name="MainMenu" type="Button" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "Menú principal"
+theme_override_styles/normal = SubResource("StyleBoxFlat_g6l17")
+text = " Menú principal "
 
 [node name="Salir" type="Button" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
-text = "Salir"
+theme_override_styles/normal = SubResource("StyleBoxFlat_q50vp")
+text = " Salir "
 
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/NextLevel" to="." method="_on_next_level_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/MainMenu" to="." method="_on_main_menu_pressed"]
