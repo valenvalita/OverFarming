@@ -158,7 +158,7 @@ func _server_pick_plant():
 	animated_plant.play("default")
 	plant_growing = false
 	plant_grown = false
-	rpc("_sync_pick_plant", current_state)
+	_sync_pick_plant.rpc(current_state)
 
 @rpc("any_peer","call_local","reliable")
 func _sync_pick_plant(new_state):
