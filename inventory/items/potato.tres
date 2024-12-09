@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://bwu5d58li1i1r"]
+
+[ext_resource type="Script" path="res://inventory/inventory_item.gd" id="1_kqjee"]
+[ext_resource type="Texture2D" uid="uid://dckqxn8dped53" path="res://assets/Crops/potato_05.png" id="2_0eqtx"]
+
+[resource]
+script = ExtResource("1_kqjee")
+nam = "potato"
+type = "plant"
+texture = ExtResource("2_0eqtx")
+max_items_per_slot = 5

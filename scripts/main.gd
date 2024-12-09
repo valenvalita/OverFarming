@@ -48,4 +48,5 @@ func Reset_Timer():
 
 func generate_requests():	
 	if is_multiplayer_authority():
-		GameFunctions.n_delivery_carrots = 5 #rng.randi_range(1, 20)
+		pass
+		#GameFunctions.n_delivery_carrots = rng.randi_range(1, 20)

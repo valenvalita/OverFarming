@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dqhpgknhdp1d3"]
+[gd_scene load_steps=34 format=3 uid="uid://dqhpgknhdp1d3"]
 
 [ext_resource type="Script" path="res://farming_system/growing_zone.gd" id="1_7h3qe"]
 [ext_resource type="Texture2D" uid="uid://bv6vrqm44yb3s" path="res://assets/Crops/soil_00.png" id="2_2ybeq"]
@@ -6,10 +6,22 @@
 [ext_resource type="Texture2D" uid="uid://4qctmer2mvcd" path="res://assets/Crops/soil_01.png" id="3_2xa08"]
 [ext_resource type="Texture2D" uid="uid://bvqcstk1m67pt" path="res://assets/Crops/soil_04.png" id="3_eamal"]
 [ext_resource type="Texture2D" uid="uid://cb0rd7ui0soxx" path="res://assets/Crops/carrot_01.png" id="3_lb7wh"]
-[ext_resource type="Texture2D" uid="uid://bmbps205v4oac" path="res://assets/Crops/soil_02.png" id="4_e868g"]
+[ext_resource type="Texture2D" uid="uid://dgtr4fw5tcr4u" path="res://assets/Crops/soil_02.png" id="4_e868g"]
 [ext_resource type="Texture2D" uid="uid://cl247rwc10tw0" path="res://assets/Crops/carrot_02.png" id="4_fuydl"]
 [ext_resource type="Texture2D" uid="uid://bo2rs0cuar10h" path="res://assets/Crops/carrot_03.png" id="5_i58ua"]
 [ext_resource type="Texture2D" uid="uid://bsms4nkbbwjbb" path="res://assets/Crops/carrot_04.png" id="6_ol02o"]
+[ext_resource type="Texture2D" uid="uid://ko02uawv7n3" path="res://assets/Crops/beetroot_01.png" id="7_xs8kd"]
+[ext_resource type="Texture2D" uid="uid://bao6r73aadoq0" path="res://assets/Crops/beetroot_02.png" id="8_o1ulp"]
+[ext_resource type="Texture2D" uid="uid://c31vefhl7o4hd" path="res://assets/Crops/beetroot_03.png" id="9_p0f2v"]
+[ext_resource type="Texture2D" uid="uid://yn0rv25osryl" path="res://assets/Crops/beetroot_04.png" id="10_4ayp3"]
+[ext_resource type="Texture2D" uid="uid://qljgjrtu58nf" path="res://assets/Crops/potato_01.png" id="15_g5jte"]
+[ext_resource type="Texture2D" uid="uid://cfx04hghpab0h" path="res://assets/Crops/potato_02.png" id="16_8alg8"]
+[ext_resource type="Texture2D" uid="uid://bn4i82vka6ivx" path="res://assets/Crops/potato_03.png" id="17_du7yn"]
+[ext_resource type="Texture2D" uid="uid://dnspn15e4c5fg" path="res://assets/Crops/potato_04.png" id="18_k6o33"]
+[ext_resource type="Texture2D" uid="uid://mvje3y0eeilg" path="res://assets/Crops/pumpkin_01.png" id="19_1b053"]
+[ext_resource type="Texture2D" uid="uid://dyy26mc1310ac" path="res://assets/Crops/pumpkin_02.png" id="20_ny3gc"]
+[ext_resource type="Texture2D" uid="uid://brtoc4am0oqw1" path="res://assets/Crops/pumpkin_03.png" id="21_ygbqj"]
+[ext_resource type="Texture2D" uid="uid://2mlcf0d0c4iy" path="res://assets/Crops/pumpkin_04.png" id="22_fidy6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w71if"]
 atlas = ExtResource("2_2ybeq")
@@ -70,6 +82,23 @@ region = Rect2(0, 0, 10, 13)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("7_xs8kd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_o1ulp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_p0f2v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_4ayp3")
+}],
+"loop": true,
+"name": &"beetroot_seed",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_0b252")
 }, {
 "duration": 1.0,
@@ -82,7 +111,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_l4a7y")
 }],
 "loop": true,
-"name": &"carrot_growing",
+"name": &"carrot_seed",
 "speed": 0.0
 }, {
 "frames": [{
@@ -91,6 +120,40 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_g5jte")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_8alg8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_du7yn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_k6o33")
+}],
+"loop": true,
+"name": &"potato_seed",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_1b053")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_ny3gc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_ygbqj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_fidy6")
+}],
+"loop": true,
+"name": &"pumpkin_seed",
 "speed": 0.0
 }]
 
@@ -109,7 +172,7 @@ shape = SubResource("CircleShape2D_elbbc")
 [node name="plant" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -2)
 sprite_frames = SubResource("SpriteFrames_8ppc0")
-animation = &"carrot_growing"
+animation = &"pumpkin_seed"
 
 [node name="grow_timer" type="Timer" parent="."]
 wait_time = 5.0

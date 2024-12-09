@@ -1,7 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://f7krvksfih7r"]
+[gd_scene load_steps=3 format=3 uid="uid://f7krvksfih7r"]
 
 [ext_resource type="Script" path="res://scenes/delivery_zone.gd" id="1_xlpe4"]
-[ext_resource type="Resource" uid="uid://7e32vcjkn4xn" path="res://inventory/items/carrot.tres" id="2_pph7p"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gj0uj"]
 radius = 55.0
@@ -9,7 +8,6 @@ height = 224.0
 
 [node name="delivery_zone" type="Node2D"]
 script = ExtResource("1_xlpe4")
-item = ExtResource("2_pph7p")
 
 [node name="Area2D" type="Area2D" parent="."]
 

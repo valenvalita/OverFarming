@@ -12,6 +12,7 @@ var current_state = SoilState.BARE_SOIL
 
 var plant_growing = false
 var plant_grown = false
+var seed_item : InvItem
 
 @export var item: InvItem
 @onready var animated_plant: AnimatedSprite2D = $plant
@@ -42,7 +43,7 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		# Paso 3: Recolectar	
 		elif area.get_parent().action_type == "doing" and current_state==SoilState.FULLY_GROWN_PLANT:
 			var player = area.get_parent().player_actual
-			player.collect(item)
+			player.collect(seed_item.asociated_plant)
 			pick_plant()
 			
 ###### LÓGICA DE ESTADOS AL PLANTAR ######
@@ -65,7 +66,7 @@ func _sync_dig_soil(new_state):
 func plant_seed(player):
 	Debug.log("Se intenta sembrar")
 	if player_has_seed(player):
-		var seed_item = player.get_seed()
+		seed_item = player.get_seed()
 		player.remove_item_cnt(seed_item, 1)
 		Debug.log("Semilla plantada")
 		_server_plant_seed.rpc_id(1)
@@ -110,14 +111,16 @@ func grow_plant():
 func _server_grow_plant():
 	plant_growing = true
 	grow_timer.start()
-	animated_plant.play("carrot_growing")
-	_sync_grow_plant.rpc(plant_growing)
+	if seed_item:
+		animated_plant.play(seed_item.nam)
+		_sync_grow_plant.rpc(plant_growing)
 
 @rpc("any_peer","call_local","reliable")
 func _sync_grow_plant(is_growing):
 	plant_growing = is_growing
-	animated_plant.play("carrot_growing")
-	grow_timer.start()
+	if seed_item:
+		animated_plant.play(seed_item.nam)
+		grow_timer.start()
 
 func _on_grow_timer_timeout() -> void:
 	_server_grow_step.rpc_id(1)
