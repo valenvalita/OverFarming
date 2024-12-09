@@ -6,9 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://bydioafwgisi1" path="res://scenes/collectables/seeds_store.tscn" id="4_2xr40"]
 [ext_resource type="PackedScene" uid="uid://dqhpgknhdp1d3" path="res://farming_system/growing_zone.tscn" id="5_85j8b"]
 [ext_resource type="PackedScene" uid="uid://f7krvksfih7r" path="res://scenes/delivery_zone.tscn" id="6_536cy"]
-[ext_resource type="Resource" uid="uid://domtq5thu0jga" path="res://inventory/items/beetroot_seeds.tres" id="6_n2g24"]
-[ext_resource type="Resource" uid="uid://bov8syf3l7xf4" path="res://inventory/items/potato_seeds.tres" id="7_7djxt"]
-[ext_resource type="Resource" uid="uid://bjqxbp14t3tmb" path="res://inventory/items/pumpkin_seeds.tres" id="8_cp2a6"]
+[ext_resource type="Resource" uid="uid://domtq5thu0jga" path="res://inventory/items/beetroot_seed.tres" id="6_n2g24"]
+[ext_resource type="Resource" uid="uid://bov8syf3l7xf4" path="res://inventory/items/potato_seed.tres" id="7_7djxt"]
+[ext_resource type="Resource" uid="uid://bjqxbp14t3tmb" path="res://inventory/items/pumpkin_seed.tres" id="8_cp2a6"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_x81vm"]
 tile_data = PackedInt32Array(0, 2490368, 0)
