@@ -72,15 +72,15 @@ func get_seed(index : int):
 func check_inv(num : int):
 	for slot in slots:
 		if  num == 0:
-			if slot.item.nam == "carrot":
+			if slot.item and slot.item.nam == "carrot":
 				return slot.item
 		elif num == 1:
-			if slot.item.nam == "beetroot":
+			if slot.item and slot.item.nam == "beetroot":
 				return slot.item
 		elif num == 2:
-			if slot.item.nam == "potato":
+			if slot.item and slot.item.nam == "potato":
 				return slot.item
 		elif num == 3:
-			if slot.item.nam == "pumpkin":
+			if slot.item and slot.item.nam == "pumpkin":
 				return slot.item
 	return null
