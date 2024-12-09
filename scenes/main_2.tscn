@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_uuprj"]
 [ext_resource type="PackedScene" uid="uid://bkvdcld6sp21y" path="res://scenes/player.tscn" id="2_yae5n"]
-[ext_resource type="PackedScene" uid="uid://qi144wt3cvkr" path="res://scenes/world2.tscn" id="3_hi7pa"]
+[ext_resource type="PackedScene" uid="uid://ce1w76vt8qcem" path="res://scenes/world3.tscn" id="3_1w7ac"]
 [ext_resource type="PackedScene" uid="uid://m7pra0oohrmm" path="res://scenes/ui/pause_menu.tscn" id="4_bm3pu"]
 [ext_resource type="PackedScene" uid="uid://bmf6aj2usll38" path="res://scenes/requests/requests.tscn" id="5_x738a"]
 [ext_resource type="AudioStream" uid="uid://bukdqn77co1gl" path="res://Musica/1_Level_Theme.wav" id="6_elamt"]
@@ -19,20 +19,20 @@ scale = Vector2(1.4, 1.4)
 y_sort_enabled = true
 scale = Vector2(2.1, 2.1)
 
-[node name="World" parent="Players/Background" instance=ExtResource("3_hi7pa")]
+[node name="World" parent="Players/Background" instance=ExtResource("3_1w7ac")]
 
 [node name="Markers" type="Node2D" parent="."]
 
 [node name="Marker2D" type="Marker2D" parent="Markers"]
-position = Vector2(214, 322)
+position = Vector2(750, 500)
 gizmo_extents = 100.0
 
 [node name="Marker2D2" type="Marker2D" parent="Markers"]
-position = Vector2(900, 317)
+position = Vector2(600, 700)
 gizmo_extents = 100.0
 
 [node name="Marker2D3" type="Marker2D" parent="Markers"]
-position = Vector2(1076, 195)
+position = Vector2(360, 600)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

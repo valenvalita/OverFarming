@@ -135,12 +135,14 @@ func carry_action() -> void:
 		carry_instance.stop_carry()
 		carry_instance.queue_free()
 		is_carry = false
+		speed = 300
 	else:
 		animated_sprite_2d.visible = false
 		carry_instance = carry.instantiate()
 		add_child(carry_instance)
 		carry_instance.carry(self, animated_sprite_2d, sprite_position)
 		is_carry = true
+		speed = 500
 
 @rpc("reliable")
 func carry_move() -> void:
