@@ -98,18 +98,19 @@ theme_override_fonts/font = ExtResource("2_lhemq")
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_iiqui")
 text = " Música hecha por :
- "
+ Hernán Ulloa , @Hernon789"
 
 [node name="Label3" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_lhemq")
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_2ng0h")
-text = "Diseñadores y Programadores :"
+text = " Diseñadores y Programadores :
+ Rodri , ValenValita y Elba"
 
 [node name="Label4" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_lhemq")
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_ci818")
-text = "CTM!: CRAFT THE MAGIC LEGACY"
+text = " CTM!: CRAFT THE MAGIC LEGACY"

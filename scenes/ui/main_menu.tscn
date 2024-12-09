@@ -65,7 +65,7 @@ text = "Jugar"
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_xpis2")
-text = "Opciones"
+text = "Créditos"
 
 [node name="Quit" type="Button" parent="VBoxContainer"]
 layout_mode = 2

@@ -1,8 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bslhrv3eo36wd"]
+[gd_scene load_steps=5 format=3 uid="uid://bkh1ja20ow0vn"]
 
-[ext_resource type="Script" path="res://scenes/ui/lobby.gd" id="1_g2fmt"]
-[ext_resource type="PackedScene" uid="uid://chbh4lxk8rmmd" path="res://scenes/ui/lobby_player.tscn" id="2_060bj"]
-[ext_resource type="Texture2D" uid="uid://cclq4ifk30wx0" path="res://resources/Screenshot11-1920x1080-6eaa30c582dd6d4935e73dbadc1457d4_v2.jpg" id="2_eys5l"]
+[ext_resource type="Script" path="res://scenes/ui/lobby2.gd" id="1_570uk"]
+[ext_resource type="PackedScene" uid="uid://chbh4lxk8rmmd" path="res://scenes/ui/lobby_player.tscn" id="2_a2vdl"]
+[ext_resource type="Texture2D" uid="uid://cclq4ifk30wx0" path="res://resources/Screenshot11-1920x1080-6eaa30c582dd6d4935e73dbadc1457d4_v2.jpg" id="2_r4mbt"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ogfno"]
 bg_color = Color(0.140447, 0.140447, 0.140447, 1)
@@ -13,12 +13,12 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_g2fmt")
-lobby_player_scene = ExtResource("2_060bj")
+script = ExtResource("1_570uk")
+lobby_player_scene = ExtResource("2_a2vdl")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 2
-texture = ExtResource("2_eys5l")
+texture = ExtResource("2_r4mbt")
 expand_mode = 1
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
