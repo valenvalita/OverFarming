@@ -172,7 +172,7 @@ shape = SubResource("CircleShape2D_elbbc")
 [node name="plant" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -2)
 sprite_frames = SubResource("SpriteFrames_8ppc0")
-animation = &"pumpkin_seed"
+animation = &"beetroot_seed"
 
 [node name="grow_timer" type="Timer" parent="."]
 wait_time = 5.0

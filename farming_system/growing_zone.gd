@@ -67,12 +67,22 @@ func plant_seed(player):
 	Debug.log("Se intenta sembrar")
 	if player_has_seed(player):
 		seed_item = player.get_seed()
+		_server_set_seed.rpc_id(1, seed_item.nam)
 		player.remove_item_cnt(seed_item, 1)
 		Debug.log("Semilla plantada")
 		_server_plant_seed.rpc_id(1)
 	else:
 		Debug.log("Jugador no tiene semillas")
-		
+
+@rpc("any_peer","call_local","reliable")
+func _server_set_seed(seed_nam):
+	_sync_set_seed.rpc(seed_nam)
+
+@rpc("any_peer","call_local","reliable")
+func _sync_set_seed(seed_nam):
+	seed_item = GameFunctions.item_data[seed_nam]
+
+
 func player_has_seed(player):
 	return player.has_seed()		
 
@@ -120,11 +130,9 @@ func _sync_grow_plant(is_growing):
 	plant_growing = is_growing
 	if seed_item:
 		animated_plant.play(seed_item.nam)
-		grow_timer.start()
 
 func _on_grow_timer_timeout() -> void:
 	_server_grow_step.rpc_id(1)
-	animated_plant.frame += 1
 
 @rpc("any_peer","call_local","reliable")
 func _server_grow_step():
