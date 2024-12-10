@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://dya4lxprhp3id"]
 
-[ext_resource type="Texture2D" uid="uid://djvknql01ttdw" path="res://resources/Screenshot11-1920x1080-6eaa30c582dd6d4935e73dbadc1457d4_v1.jpg" id="1_1nu5n"]
+[ext_resource type="Texture2D" uid="uid://c3et4r2ipvefn" path="res://resources/Screenshot11-1920x1080-6eaa30c582dd6d4935e73dbadc1457d4_v1.jpg" id="1_1nu5n"]
 [ext_resource type="Script" path="res://scripts/creditos2.gd" id="1_auvmg"]
-[ext_resource type="FontFile" uid="uid://cvyufuljd85ur" path="res://assets/fonts/Kenney Pixel.ttf" id="2_lhemq"]
+[ext_resource type="FontFile" uid="uid://bukoyhyh1nkgo" path="res://assets/fonts/Kenney Pixel.ttf" id="2_lhemq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1fcn1"]
 bg_color = Color(0.0676483, 0.121805, 0.187982, 1)
@@ -121,11 +121,15 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_ci818")
 text = " CTM!: CRAFT THE MAGIC LEGACY"
 
 [node name="Button" type="Button" parent="."]
-layout_mode = 0
-offset_left = 1001.0
-offset_top = 28.0
-offset_right = 1119.0
-offset_bottom = 64.0
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -150.0
+offset_top = 24.0
+offset_right = -32.0
+offset_bottom = 60.0
+grow_horizontal = 0
 theme_override_fonts/font = ExtResource("2_lhemq")
 theme_override_font_sizes/font_size = 45
 theme_override_styles/normal = SubResource("StyleBoxFlat_ngllh")

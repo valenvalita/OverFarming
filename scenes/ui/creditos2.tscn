@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://bypnjr3huudn5"]
 
 [ext_resource type="Script" path="res://scripts/creditos.gd" id="1_7igew"]
-[ext_resource type="Texture2D" uid="uid://djvknql01ttdw" path="res://resources/Screenshot11-1920x1080-6eaa30c582dd6d4935e73dbadc1457d4_v1.jpg" id="2_to7k2"]
-[ext_resource type="FontFile" uid="uid://cvyufuljd85ur" path="res://assets/fonts/Kenney Pixel.ttf" id="3_mkjvf"]
+[ext_resource type="Texture2D" uid="uid://c3et4r2ipvefn" path="res://resources/Screenshot11-1920x1080-6eaa30c582dd6d4935e73dbadc1457d4_v1.jpg" id="2_to7k2"]
+[ext_resource type="FontFile" uid="uid://bukoyhyh1nkgo" path="res://assets/fonts/Kenney Pixel.ttf" id="3_mkjvf"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1fcn1"]
 bg_color = Color(0.0676483, 0.121805, 0.187982, 1)

@@ -55,7 +55,7 @@ offset_left = -16.0
 offset_right = 16.0
 offset_bottom = 23.0
 grow_horizontal = 2
-text = "1:30"
+text = "2:00"
 
 [node name="Requests" parent="CanvasLayer" instance=ExtResource("5_isuke")]
 visible = false

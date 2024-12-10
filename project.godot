@@ -22,6 +22,10 @@ Game="*res://autoloads/game.tscn"
 GameFunctions="*res://autoloads/game_functions.tscn"
 MenuMusic="*res://Musica/menu_music.tscn"
 
+[editor]
+
+export/convert_text_resources_to_binary=false
+
 [global_group]
 
 player=""
