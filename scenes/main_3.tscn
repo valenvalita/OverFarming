@@ -1,0 +1,74 @@
+[gd_scene load_steps=7 format=3 uid="uid://1580msvtdmox"]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_emplt"]
+[ext_resource type="PackedScene" uid="uid://bkvdcld6sp21y" path="res://scenes/player.tscn" id="2_iji1v"]
+[ext_resource type="PackedScene" uid="uid://tn77ehmvgy12" path="res://scenes/world_lv3.tscn" id="3_323dy"]
+[ext_resource type="PackedScene" uid="uid://m7pra0oohrmm" path="res://scenes/ui/pause_menu.tscn" id="4_iuwtf"]
+[ext_resource type="PackedScene" uid="uid://bmf6aj2usll38" path="res://scenes/requests/requests.tscn" id="5_oox3v"]
+[ext_resource type="AudioStream" uid="uid://ca1ebiccwrlha" path="res://Musica/1_Level_Theme.wav" id="6_ghhol"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_emplt")
+player_scene = ExtResource("2_iji1v")
+
+[node name="Players" type="Node2D" parent="."]
+y_sort_enabled = true
+scale = Vector2(1.4, 1.4)
+
+[node name="Background" type="Node2D" parent="Players"]
+y_sort_enabled = true
+scale = Vector2(2.1, 2.1)
+
+[node name="World" parent="Players/Background" instance=ExtResource("3_323dy")]
+
+[node name="Markers" type="Node2D" parent="."]
+
+[node name="Marker2D" type="Marker2D" parent="Markers"]
+position = Vector2(1530, 1129)
+gizmo_extents = 100.0
+
+[node name="Marker2D2" type="Marker2D" parent="Markers"]
+position = Vector2(1232, 1151)
+gizmo_extents = 100.0
+
+[node name="Marker2D3" type="Marker2D" parent="Markers"]
+position = Vector2(982, 1111)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("4_iuwtf")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+
+[node name="Timer" type="Timer" parent="CanvasLayer"]
+process_callback = 0
+autostart = true
+
+[node name="Time" type="Label" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "1:30"
+
+[node name="Requests" parent="CanvasLayer" instance=ExtResource("5_oox3v")]
+visible = false
+anchors_preset = -1
+anchor_left = 1.0
+anchor_bottom = 0.0
+offset_left = -116.0
+offset_top = 1.0
+offset_right = -116.0
+offset_bottom = 1.0
+scale = Vector2(1.5, 1.5)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_ghhol")
+volume_db = -40.0
+autoplay = true
+
+[connection signal="timeout" from="CanvasLayer/Timer" to="." method="_on_timer_timeout"]
