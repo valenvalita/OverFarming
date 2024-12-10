@@ -4,10 +4,11 @@ extends Node2D
 @onready var players: Node2D = $Players
 @onready var markers: Node2D = $Markers
 @onready var time: Control = $CanvasLayer/Time
+@export var musica: int 
 var seconds = 0
 var minutes = 0
-var Dseconds = 30
-var Dminutes = 1
+var Dseconds = 0
+var Dminutes = 2
 
 var rng = RandomNumberGenerator.new()
 
@@ -20,7 +21,8 @@ func win_screen()-> void:
 	get_tree().change_scene_to_file("res://scenes/ui/win_screen.tscn")
 
 func _ready() -> void:
-	MenuMusic.play_music_level(1)
+	if musica:
+		MenuMusic.play_music_level(musica)
 	generate_requests()
 	Reset_Timer()
 	#Game.players.sort()

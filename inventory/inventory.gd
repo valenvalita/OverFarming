@@ -14,7 +14,7 @@ func _ready() -> void:
 
 func insert(item: InvItem):
 	var max_items_per_slot = item.max_items_per_slot if item.max_items_per_slot > 0 else max_items_per_slot_dft
-	var itemslots = slots.filter(func(slot): return slot.item==item)
+	var itemslots = slots.filter(func(slot): return slot.item.nam==item.nam)
 	if !itemslots.is_empty():
 		if itemslots[0].amount < max_items_per_slot:
 			itemslots[0].amount += 1
@@ -32,7 +32,7 @@ func insert(item: InvItem):
 	update.emit()
 
 func remove_item(item: InvItem) -> int:
-	var itemslots = slots.filter(func(slot): return slot.item == item)
+	var itemslots = slots.filter(func(slot): return slot.item.nam == item.nam)
 	if !itemslots.is_empty():
 		#actual_items -= 1
 		var quantity = itemslots[0].amount  # Obtener la cantidad del ítem
@@ -45,7 +45,7 @@ func remove_item(item: InvItem) -> int:
 		return 0  # Devolver 0 si no se encontró el ítem
 
 func remove_item_ctn(item: InvItem, cnt: int) -> void:
-	var itemslots = slots.filter(func(slot): return slot.item == item)
+	var itemslots = slots.filter(func(slot): return slot.item.nam == item.nam)
 	if !itemslots.is_empty():
 		var quantity = itemslots[0].amount  # Obtener la cantidad del ítem
 		var new_quantity = max(quantity - cnt, 0)

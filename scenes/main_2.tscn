@@ -10,6 +10,7 @@
 [node name="Main" type="Node2D"]
 script = ExtResource("1_uuprj")
 player_scene = ExtResource("2_yae5n")
+musica = 2
 
 [node name="Players" type="Node2D" parent="."]
 y_sort_enabled = true

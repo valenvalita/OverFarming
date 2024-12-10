@@ -83,7 +83,6 @@ func _server_set_seed(seed_nam):
 func _sync_set_seed(seed_nam):
 	seed_item = GameFunctions.item_data[seed_nam]
 
-
 func player_has_seed(player):
 	return player.has_seed()		
 
