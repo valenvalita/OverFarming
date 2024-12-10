@@ -1,15 +1,19 @@
-[gd_scene load_steps=15 format=4 uid="uid://qi144wt3cvkr"]
+[gd_scene load_steps=19 format=4 uid="uid://qi144wt3cvkr"]
 
 [ext_resource type="Texture2D" uid="uid://dlhlylw0e64nf" path="res://assets/world/spr_tileset_sunnysideworld_16px.png" id="1_6e0nf"]
 [ext_resource type="PackedScene" uid="uid://dqhpgknhdp1d3" path="res://farming_system/growing_zone.tscn" id="2_8l1rb"]
 [ext_resource type="Texture2D" uid="uid://broutkqsvsd2f" path="res://assets/world/Boat.png" id="3_roeh7"]
 [ext_resource type="Script" path="res://scripts/area_transparent.gd" id="4_y11m5"]
 [ext_resource type="PackedScene" uid="uid://bydioafwgisi1" path="res://scenes/collectables/seeds_store.tscn" id="5_4fcup"]
+[ext_resource type="Texture2D" uid="uid://ydwx2gh2sbg1" path="res://assets/Crops/carrot_seeds.png" id="6_4bdya"]
 [ext_resource type="Resource" uid="uid://domtq5thu0jga" path="res://inventory/items/beetroot_seed.tres" id="6_04s8w"]
 [ext_resource type="PackedScene" uid="uid://f7krvksfih7r" path="res://scenes/delivery_zone.tscn" id="6_tih3a"]
-[ext_resource type="FontFile" uid="uid://cvyufuljd85ur" path="res://assets/fonts/Kenney Pixel.ttf" id="7_fe568"]
+[ext_resource type="Texture2D" uid="uid://57h5q1q1wxes" path="res://assets/Crops/beetrot_seed.png" id="7_0v6uq"]
+[ext_resource type="FontFile" uid="uid://bukoyhyh1nkgo" path="res://assets/fonts/Kenney Pixel.ttf" id="7_fe568"]
 [ext_resource type="Resource" uid="uid://bov8syf3l7xf4" path="res://inventory/items/potato_seed.tres" id="7_rn2we"]
 [ext_resource type="Resource" uid="uid://bjqxbp14t3tmb" path="res://inventory/items/pumpkin_seed.tres" id="8_7hvhj"]
+[ext_resource type="Texture2D" uid="uid://ckh1edeabpgu" path="res://assets/Crops/potato_seed.png" id="9_e0t0o"]
+[ext_resource type="Texture2D" uid="uid://bqa1r1gxtpwpp" path="res://assets/Crops/pumpkin_seed.png" id="11_a83e4"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_x81vm"]
 tile_data = PackedInt32Array(0, 2490368, 0)
@@ -2737,21 +2741,25 @@ polygon = PackedVector2Array(69, 1536, 70, 1529, 128, 1529, 128, 1523, 135, 1522
 [node name="seeds_store3" parent="." instance=ExtResource("5_4fcup")]
 position = Vector2(34, 448)
 scale = Vector2(0.5, 0.5)
+seed_pack_texture = ExtResource("6_4bdya")
 
 [node name="seeds_store4" parent="." instance=ExtResource("5_4fcup")]
 position = Vector2(69, 448)
 scale = Vector2(0.5, 0.5)
 item = ExtResource("6_04s8w")
+seed_pack_texture = ExtResource("7_0v6uq")
 
 [node name="seeds_store5" parent="." instance=ExtResource("5_4fcup")]
 position = Vector2(114, 448)
 scale = Vector2(0.5, 0.5)
 item = ExtResource("7_rn2we")
+seed_pack_texture = ExtResource("9_e0t0o")
 
 [node name="seeds_store2" parent="." instance=ExtResource("5_4fcup")]
 position = Vector2(149, 448)
 scale = Vector2(0.5, 0.5)
 item = ExtResource("8_7hvhj")
+seed_pack_texture = ExtResource("11_a83e4")
 
 [node name="delivery_zone" parent="." instance=ExtResource("6_tih3a")]
 visible = false

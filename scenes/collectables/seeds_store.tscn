@@ -1,23 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://bydioafwgisi1"]
+[gd_scene load_steps=5 format=3 uid="uid://bydioafwgisi1"]
 
-[ext_resource type="Texture2D" uid="uid://ydwx2gh2sbg1" path="res://assets/Crops/carrot_seeds.png" id="1_7gihe"]
 [ext_resource type="Script" path="res://scenes/collectables/seeds_store.gd" id="1_jr4we"]
 [ext_resource type="Resource" uid="uid://c31bep6s58xfe" path="res://inventory/items/carrot_seed.tres" id="2_6ay75"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xwuou"]
-atlas = ExtResource("1_7gihe")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_2rfhg"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xwuou")
-}],
-"loop": true,
-"name": &"seeds",
-"speed": 5.0
-}]
+[ext_resource type="Texture2D" uid="uid://bp15ivunv7kvv" path="res://assets/Crops/bag.png" id="3_vfopt"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_r72ll"]
 radius = 28.0
@@ -26,9 +11,9 @@ radius = 28.0
 script = ExtResource("1_jr4we")
 item = ExtResource("2_6ay75")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_2rfhg")
-animation = &"seeds"
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("3_vfopt")
 
 [node name="pickable_area" type="Area2D" parent="."]
 

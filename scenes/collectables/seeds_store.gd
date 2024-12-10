@@ -4,10 +4,15 @@ var state = "no seed"
 var player_in_area = false
 
 @export var item: InvItem
+@export var seed_pack_texture: Texture
+@onready var sprite_2d: Sprite2D = $Sprite2D
+
+
 var player = null 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	if(seed_pack_texture):
+		sprite_2d.texture = seed_pack_texture
 
 @warning_ignore("unused_parameter")
 func _process(delta: float) -> void:

@@ -2,12 +2,12 @@
 
 [ext_resource type="Script" path="res://inventory/inventory_item.gd" id="1_k8wrs"]
 [ext_resource type="Resource" uid="uid://7e32vcjkn4xn" path="res://inventory/items/carrot.tres" id="1_w1lkq"]
-[ext_resource type="Texture2D" uid="uid://dhsybotsdv663" path="res://assets/Crops/carrot_seed.png" id="2_7ihkd"]
+[ext_resource type="Texture2D" uid="uid://cdgh3vrc2u81o" path="res://assets/Crops/carrot_00.png" id="3_sewu3"]
 
 [resource]
 script = ExtResource("1_k8wrs")
 nam = "carrot_seed"
 type = "seed"
-texture = ExtResource("2_7ihkd")
+texture = ExtResource("3_sewu3")
 asociated_plant = ExtResource("1_w1lkq")
 max_items_per_slot = 5

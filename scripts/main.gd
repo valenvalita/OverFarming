@@ -6,8 +6,8 @@ extends Node2D
 @onready var time: Control = $CanvasLayer/Time
 var seconds = 0
 var minutes = 0
-var Dseconds = 0
-var Dminutes = 5
+var Dseconds = 30
+var Dminutes = 1
 
 var rng = RandomNumberGenerator.new()
 
