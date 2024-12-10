@@ -64,15 +64,16 @@ func _sync_dig_soil(new_state):
 	
 ## LÓGICA PARA PLANTAR SEMILLAS ##
 func plant_seed(player):
-	Debug.log("Se intenta sembrar")
+	#Debug.log("Se intenta sembrar")
 	if player_has_seed(player):
 		seed_item = player.get_seed()
 		_server_set_seed.rpc_id(1, seed_item.nam)
 		player.remove_item_cnt(seed_item, 1)
-		Debug.log("Semilla plantada")
+		#Debug.log("Semilla plantada")
 		_server_plant_seed.rpc_id(1)
 	else:
-		Debug.log("Jugador no tiene semillas")
+		pass
+		#Debug.log("Jugador no tiene semillas")
 
 @rpc("any_peer","call_local","reliable")
 func _server_set_seed(seed_nam):
@@ -98,7 +99,7 @@ func _sync_plant_state(new_state):
 		
 ## LÓGICA PARA REGAR PLANTAS ##	
 func water_soil():
-	Debug.log("Se riega")
+	#Debug.log("Se riega")
 	_server_water_soil.rpc_id(1)
 
 @rpc("any_peer","call_local","reliable")
@@ -153,11 +154,12 @@ func _sync_grow_step(frame, new_state, is_grown):
 	current_state = new_state
 	plant_grown = is_grown
 	if plant_grown:
-		Debug.log("La planta ya creció")
+		pass
+		#Debug.log("La planta ya creció")
 		
 ## LÓGICA PARA RECOGER PLANTAS ##
 func pick_plant():
-	print("Se recoge planta")
+	#print("Se recoge planta")
 	_server_pick_plant.rpc_id(1)
 
 @rpc("any_peer","call_local","reliable")
@@ -174,4 +176,4 @@ func _sync_pick_plant(new_state):
 	animated_plant.play("default")
 	plant_growing = false
 	plant_grown = false
-	Debug.log("Planta recogida")
+	#Debug.log("Planta recogida")

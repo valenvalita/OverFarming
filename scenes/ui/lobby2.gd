@@ -63,7 +63,7 @@ func _process(_delta: float) -> void:
 
 
 func _on_upnp_completed(error) -> void:
-	print(error)
+	#print(error)
 	if error == OK:
 		Debug.log("Port Opened", 5)
 	else:

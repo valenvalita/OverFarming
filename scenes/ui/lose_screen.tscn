@@ -1,10 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://362qhum77814"]
+[gd_scene load_steps=7 format=3 uid="uid://362qhum77814"]
 
 [ext_resource type="Script" path="res://scripts/lose_screen.gd" id="1_dg6hd"]
 [ext_resource type="Texture2D" uid="uid://cclq4ifk30wx0" path="res://resources/Screenshot11-1920x1080-6eaa30c582dd6d4935e73dbadc1457d4_v2.jpg" id="2_6hpjn"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_ylqm0"]
-font_size = 40
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ldj75"]
+bg_color = Color(0.0627451, 0.0627451, 0.0627451, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ejc0t"]
+bg_color = Color(0.0627451, 0.0627451, 0.0627451, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lns5u"]
+bg_color = Color(0.0627451, 0.0627451, 0.0627451, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cjomh"]
+bg_color = Color(0.0627451, 0.0627451, 0.0627451, 1)
 
 [node name="LoseScreen" type="Control"]
 layout_mode = 3
@@ -47,15 +56,22 @@ offset_right = 114.5
 offset_bottom = 27.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 100
+theme_override_constants/separation = 60
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "¡ Juego Terminado !"
-label_settings = SubResource("LabelSettings_ylqm0")
+theme_override_font_sizes/font_size = 75
+text = "¡ Se acabó el tiempo ! "
+
+[node name="Label2" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 40
+text = "Gracias por jugar"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+visible = false
 custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
 theme_override_constants/separation = 195
@@ -69,5 +85,36 @@ text = "Menú principal"
 layout_mode = 2
 text = "Salir"
 
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 150
+
+[node name="NextLevel" type="Button" parent="VBoxContainer/HBoxContainer2"]
+visible = false
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_ldj75")
+text = " Siguiente nivel "
+
+[node name="MainMenu" type="Button" parent="VBoxContainer/HBoxContainer2"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_ejc0t")
+text = " Menú principal "
+
+[node name="Créditos" type="Button" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_lns5u")
+text = " Créditos "
+
+[node name="Salir" type="Button" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_cjomh")
+text = " Salir "
+
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/MainMenu" to="." method="_on_main_menu_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/Salir" to="." method="_on_salir_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/Créditos" to="." method="_on_creditos_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/Salir" to="." method="_on_salir_pressed"]

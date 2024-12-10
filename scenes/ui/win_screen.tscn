@@ -3,13 +3,13 @@
 [ext_resource type="Script" path="res://scripts/win_screen.gd" id="1_umbjs"]
 [ext_resource type="Texture2D" uid="uid://cclq4ifk30wx0" path="res://resources/Screenshot11-1920x1080-6eaa30c582dd6d4935e73dbadc1457d4_v2.jpg" id="2_dfop6"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_yf5nx"]
-font_size = 40
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cos7s"]
 bg_color = Color(0.0627451, 0.0627451, 0.0627451, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g6l17"]
+bg_color = Color(0.0627451, 0.0627451, 0.0627451, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a6xt2"]
 bg_color = Color(0.0627451, 0.0627451, 0.0627451, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q50vp"]
@@ -56,29 +56,43 @@ offset_right = 114.5
 offset_bottom = 27.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 100
+theme_override_constants/separation = 60
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 75
 text = "¡ Nivel Completado !"
-label_settings = SubResource("LabelSettings_yf5nx")
+
+[node name="Label2" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 40
+text = "Gracias por jugar"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
 custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
+size_flags_horizontal = 4
 theme_override_constants/separation = 150
 
 [node name="NextLevel" type="Button" parent="VBoxContainer/HBoxContainer"]
+visible = false
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_cos7s")
 text = " Siguiente nivel "
 
 [node name="MainMenu" type="Button" parent="VBoxContainer/HBoxContainer"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_styles/normal = SubResource("StyleBoxFlat_g6l17")
 text = " Menú principal "
+
+[node name="Créditos" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_a6xt2")
+text = " Créditos "
 
 [node name="Salir" type="Button" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
@@ -87,4 +101,5 @@ text = " Salir "
 
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/NextLevel" to="." method="_on_next_level_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/MainMenu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Créditos" to="." method="_on_creditos_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/Salir" to="." method="_on_salir_pressed"]

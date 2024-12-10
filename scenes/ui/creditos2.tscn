@@ -1,8 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://dya4lxprhp3id"]
+[gd_scene load_steps=9 format=3 uid="uid://bypnjr3huudn5"]
 
-[ext_resource type="Texture2D" uid="uid://djvknql01ttdw" path="res://resources/Screenshot11-1920x1080-6eaa30c582dd6d4935e73dbadc1457d4_v1.jpg" id="1_1nu5n"]
-[ext_resource type="Script" path="res://scripts/creditos2.gd" id="1_auvmg"]
-[ext_resource type="FontFile" uid="uid://cvyufuljd85ur" path="res://assets/fonts/Kenney Pixel.ttf" id="2_lhemq"]
+[ext_resource type="Script" path="res://scripts/creditos.gd" id="1_7igew"]
+[ext_resource type="Texture2D" uid="uid://djvknql01ttdw" path="res://resources/Screenshot11-1920x1080-6eaa30c582dd6d4935e73dbadc1457d4_v1.jpg" id="2_to7k2"]
+[ext_resource type="FontFile" uid="uid://cvyufuljd85ur" path="res://assets/fonts/Kenney Pixel.ttf" id="3_mkjvf"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1fcn1"]
 bg_color = Color(0.0676483, 0.121805, 0.187982, 1)
@@ -26,7 +26,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_auvmg")
+script = ExtResource("1_7igew")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -44,7 +44,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_1nu5n")
+texture = ExtResource("2_to7k2")
 expand_mode = 1
 
 [node name="Titulo" type="Control" parent="."]
@@ -70,7 +70,7 @@ color = Color(0.258824, 0.352941, 0.690196, 1)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
-theme_override_fonts/font = ExtResource("2_lhemq")
+theme_override_fonts/font = ExtResource("3_mkjvf")
 theme_override_font_sizes/font_size = 150
 text = " CRÉDITOS"
 
@@ -91,7 +91,7 @@ theme_override_constants/separation = 50
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_lhemq")
+theme_override_fonts/font = ExtResource("3_mkjvf")
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_1fcn1")
 text = " Assets :
@@ -99,7 +99,7 @@ text = " Assets :
 
 [node name="Label2" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_lhemq")
+theme_override_fonts/font = ExtResource("3_mkjvf")
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_iiqui")
 text = " Música hecha por :
@@ -107,7 +107,7 @@ text = " Música hecha por :
 
 [node name="Label3" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_lhemq")
+theme_override_fonts/font = ExtResource("3_mkjvf")
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_2ng0h")
 text = " Diseñadores y Programadores :
@@ -115,20 +115,20 @@ text = " Diseñadores y Programadores :
 
 [node name="Label4" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_lhemq")
+theme_override_fonts/font = ExtResource("3_mkjvf")
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_ci818")
 text = " CTM!: CRAFT THE MAGIC LEGACY"
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 1001.0
-offset_top = 28.0
-offset_right = 1119.0
-offset_bottom = 64.0
-theme_override_fonts/font = ExtResource("2_lhemq")
+offset_left = 37.0
+offset_top = 35.0
+offset_right = 155.0
+offset_bottom = 71.0
+theme_override_fonts/font = ExtResource("3_mkjvf")
 theme_override_font_sizes/font_size = 45
 theme_override_styles/normal = SubResource("StyleBoxFlat_ngllh")
-text = "Salir"
+text = "Atras"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
